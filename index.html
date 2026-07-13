@@ -60,30 +60,30 @@
 
   * { box-sizing: border-box; }
   body {
-    margin: 0; padding: 24px; background: var(--page); color: var(--text-primary);
+    margin: 0; padding: 14px 16px; background: var(--page); color: var(--text-primary);
     font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   }
-  .wrap { max-width: 1400px; margin: 0 auto; }
-  h1 { font-size: 20px; margin: 0 0 4px; }
-  .subtitle { color: var(--text-secondary); font-size: 13px; margin: 0 0 24px; }
+  .wrap { max-width: 100%; margin: 0 auto; }
+  h1 { font-size: 17px; margin: 0 0 3px; }
+  .subtitle { color: var(--text-secondary); font-size: 11.5px; margin: 0 0 14px; }
 
   .kpis {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px; margin-bottom: 24px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px; margin-bottom: 12px;
   }
   .kpi {
-    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
-    padding: 14px 16px;
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+    padding: 8px 12px;
   }
-  .kpi .label { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
-  .kpi .value { font-size: 24px; font-weight: 600; }
+  .kpi .label { font-size: 10.5px; color: var(--text-muted); margin-bottom: 3px; }
+  .kpi .value { font-size: 18px; font-weight: 600; }
   .kpi .value.up { color: var(--up-fg); }
   .kpi .value.down { color: var(--down-fg); }
 
   .controls {
-    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
-    margin-bottom: 14px; background: var(--surface-1); border: 1px solid var(--border);
-    border-radius: 10px; padding: 12px 14px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+    margin-bottom: 10px; background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 8px; padding: 8px 10px;
   }
   .controls input[type="search"], .controls select {
     background: var(--page); color: var(--text-primary); border: 1px solid var(--border);
@@ -98,21 +98,21 @@
   .seg button.active { background: var(--blue); color: white; }
   .count-note { color: var(--text-muted); font-size: 12.5px; margin-left: auto; }
 
-  table { width: 100%; border-collapse: collapse; font-size: 12.5px; background: var(--surface-1); }
-  .table-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: auto; max-height: 70vh; }
+  table { width: 100%; border-collapse: collapse; font-size: 10.5px; background: var(--surface-1); table-layout: auto; }
+  .table-wrap { border: 1px solid var(--border); border-radius: 10px; overflow: auto; max-height: 78vh; }
   thead th {
-    position: sticky; top: 0; background: var(--surface-1); text-align: left; padding: 10px 10px;
+    position: sticky; top: 0; background: var(--surface-1); text-align: left; padding: 6px 6px;
     color: var(--text-secondary); font-weight: 600; border-bottom: 1px solid var(--gridline);
-    cursor: pointer; white-space: nowrap; user-select: none;
+    cursor: pointer; white-space: nowrap; user-select: none; font-size: 10.5px;
   }
   thead th:hover { color: var(--text-primary); }
-  thead th.sorted::after { content: " " attr(data-dir); font-size: 10px; color: var(--blue); }
-  tbody td { padding: 8px 10px; border-bottom: 1px solid var(--gridline); white-space: nowrap; }
+  thead th.sorted::after { content: " " attr(data-dir); font-size: 9px; color: var(--blue); }
+  tbody td { padding: 4px 6px; border-bottom: 1px solid var(--gridline); white-space: nowrap; }
   tbody tr:hover { background: color-mix(in srgb, var(--blue) 6%, transparent); }
   .num { text-align: right; font-variant-numeric: tabular-nums; }
   .badge {
-    display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 20px;
-    font-size: 11.5px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 3px; padding: 1px 6px; border-radius: 20px;
+    font-size: 10px; font-weight: 600; white-space: nowrap;
   }
   .badge.up { background: var(--up-bg); color: var(--up-fg); }
   .badge.down { background: var(--down-bg); color: var(--down-fg); }
@@ -153,14 +153,14 @@
           <th data-k="modelo">Modelo</th>
           <th data-k="version">Versión</th>
           <th data-k="patente">Patente</th>
-          <th data-k="fechaVpp">Fecha creación VPP</th>
-          <th data-k="km">Kilometraje</th>
-          <th data-k="precioAutomatico" class="num hl">Precio Automático</th>
-          <th data-k="descuentos" class="num">Desc. mecánicos y estéticos</th>
-          <th data-k="ofertaFinal" class="num">Oferta final al vendedor</th>
-          <th data-k="c2b" class="num hl">Nuevo Precio C2B (Julio)</th>
-          <th data-k="diff" class="num">Diferencia</th>
-          <th data-k="pct" class="num">% Variación</th>
+          <th data-k="fechaVpp">Fecha VPP</th>
+          <th data-k="km">Km</th>
+          <th data-k="precioAutomatico" class="num hl">Precio Auto.</th>
+          <th data-k="descuentos" class="num">Desc. Mec/Estét.</th>
+          <th data-k="ofertaFinal" class="num">Oferta Final</th>
+          <th data-k="c2b" class="num hl">C2B Julio</th>
+          <th data-k="diff" class="num">Dif.</th>
+          <th data-k="pct" class="num">% Var.</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
@@ -185,7 +185,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  -231000,
         "pct":  -5,
-        "fechaVpp":  "2026-07-12 18:20"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2023",
@@ -200,7 +200,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  259000,
         "pct":  3.79,
-        "fechaVpp":  "2026-07-12 17:33"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2021",
@@ -215,7 +215,7 @@ const DATA = [
         "c2b":  14790000,
         "diff":  395000,
         "pct":  2.74,
-        "fechaVpp":  "2026-07-12 17:31"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2022",
@@ -230,7 +230,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -11000,
         "pct":  -0.18,
-        "fechaVpp":  "2026-07-12 17:13"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2022",
@@ -245,7 +245,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  83000,
         "pct":  0.51,
-        "fechaVpp":  "2026-07-12 16:33"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2023",
@@ -260,7 +260,7 @@ const DATA = [
         "c2b":  9090000,
         "diff":  11000,
         "pct":  0.12,
-        "fechaVpp":  "2026-07-12 16:24"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2022",
@@ -275,7 +275,7 @@ const DATA = [
         "c2b":  8290000,
         "diff":  -71000,
         "pct":  -0.85,
-        "fechaVpp":  "2026-07-12 15:36"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2018",
@@ -290,7 +290,7 @@ const DATA = [
         "c2b":  5590000,
         "diff":  -127000,
         "pct":  -2.22,
-        "fechaVpp":  "2026-07-12 14:02"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2011",
@@ -305,7 +305,7 @@ const DATA = [
         "c2b":  11990000,
         "diff":  -77000,
         "pct":  -0.64,
-        "fechaVpp":  "2026-07-12 13:46"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2023",
@@ -320,7 +320,7 @@ const DATA = [
         "c2b":  11390000,
         "diff":  84000,
         "pct":  0.74,
-        "fechaVpp":  "2026-07-12 11:30"
+        "fechaVpp":  "2026-07-12"
     },
     {
         "anio":  "2018",
@@ -335,7 +335,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -873000,
         "pct":  -12.36,
-        "fechaVpp":  "2026-07-11 16:40"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2021",
@@ -350,7 +350,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  207000,
         "pct":  2.41,
-        "fechaVpp":  "2026-07-11 16:29"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2023",
@@ -365,7 +365,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  4000,
         "pct":  0.05,
-        "fechaVpp":  "2026-07-11 16:00"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2017",
@@ -380,7 +380,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  654000,
         "pct":  6.58,
-        "fechaVpp":  "2026-07-11 15:05"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2017",
@@ -395,7 +395,7 @@ const DATA = [
         "c2b":  8290000,
         "diff":  -489000,
         "pct":  -5.57,
-        "fechaVpp":  "2026-07-11 13:39"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2017",
@@ -410,7 +410,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -78000,
         "pct":  -1.19,
-        "fechaVpp":  "2026-07-11 13:28"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2023",
@@ -425,7 +425,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  108000,
         "pct":  1.59,
-        "fechaVpp":  "2026-07-11 13:08"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2022",
@@ -440,7 +440,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  52000,
         "pct":  0.81,
-        "fechaVpp":  "2026-07-11 12:35"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2022",
@@ -455,7 +455,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  -69000,
         "pct":  -0.58,
-        "fechaVpp":  "2026-07-11 12:18"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2017",
@@ -470,7 +470,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  146000,
         "pct":  2.89,
-        "fechaVpp":  "2026-07-11 11:50"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2021",
@@ -485,7 +485,7 @@ const DATA = [
         "c2b":  6990000,
         "diff":  120000,
         "pct":  1.75,
-        "fechaVpp":  "2026-07-11 11:45"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2023",
@@ -500,7 +500,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  214000,
         "pct":  3.02,
-        "fechaVpp":  "2026-07-11 10:55"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2022",
@@ -515,7 +515,7 @@ const DATA = [
         "c2b":  13290000,
         "diff":  -21000,
         "pct":  -0.16,
-        "fechaVpp":  "2026-07-11 10:34"
+        "fechaVpp":  "2026-07-11"
     },
     {
         "anio":  "2021",
@@ -530,7 +530,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  -85000,
         "pct":  -1.42,
-        "fechaVpp":  "2026-07-10 18:46"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2021",
@@ -545,7 +545,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  458000,
         "pct":  3.94,
-        "fechaVpp":  "2026-07-10 17:01"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2020",
@@ -560,7 +560,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  49000,
         "pct":  0.41,
-        "fechaVpp":  "2026-07-10 16:55"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2019",
@@ -575,7 +575,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  -80000,
         "pct":  -0.8,
-        "fechaVpp":  "2026-07-10 16:49"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2022",
@@ -590,7 +590,7 @@ const DATA = [
         "c2b":  9990000,
         "diff":  -63000,
         "pct":  -0.63,
-        "fechaVpp":  "2026-07-10 16:40"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2023",
@@ -605,7 +605,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -21000,
         "pct":  -0.22,
-        "fechaVpp":  "2026-07-10 16:23"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2016",
@@ -620,7 +620,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  1323000,
         "pct":  14.12,
-        "fechaVpp":  "2026-07-10 16:20"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2019",
@@ -635,7 +635,7 @@ const DATA = [
         "c2b":  10990000,
         "diff":  -292000,
         "pct":  -2.59,
-        "fechaVpp":  "2026-07-10 16:16"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2021",
@@ -650,7 +650,7 @@ const DATA = [
         "c2b":  22590000,
         "diff":  -19000,
         "pct":  -0.08,
-        "fechaVpp":  "2026-07-10 15:52"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2019",
@@ -665,7 +665,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  451000,
         "pct":  4.99,
-        "fechaVpp":  "2026-07-10 15:52"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2023",
@@ -680,7 +680,7 @@ const DATA = [
         "c2b":  16190000,
         "diff":  757000,
         "pct":  4.91,
-        "fechaVpp":  "2026-07-10 15:39"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2016",
@@ -695,7 +695,7 @@ const DATA = [
         "c2b":  10490000,
         "diff":  310000,
         "pct":  3.05,
-        "fechaVpp":  "2026-07-10 15:24"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2020",
@@ -710,7 +710,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  119000,
         "pct":  1.68,
-        "fechaVpp":  "2026-07-10 15:07"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2023",
@@ -725,7 +725,7 @@ const DATA = [
         "c2b":  9090000,
         "diff":  39000,
         "pct":  0.43,
-        "fechaVpp":  "2026-07-10 14:40"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2021",
@@ -740,7 +740,7 @@ const DATA = [
         "c2b":  13390000,
         "diff":  392000,
         "pct":  3.02,
-        "fechaVpp":  "2026-07-10 13:58"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2019",
@@ -755,7 +755,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  114000,
         "pct":  1.88,
-        "fechaVpp":  "2026-07-10 13:54"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2023",
@@ -770,7 +770,7 @@ const DATA = [
         "c2b":  11990000,
         "diff":  181000,
         "pct":  1.53,
-        "fechaVpp":  "2026-07-10 12:39"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2023",
@@ -785,7 +785,7 @@ const DATA = [
         "c2b":  23790000,
         "diff":  215000,
         "pct":  0.91,
-        "fechaVpp":  "2026-07-10 12:26"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2016",
@@ -800,7 +800,7 @@ const DATA = [
         "c2b":  4890000,
         "diff":  83000,
         "pct":  1.73,
-        "fechaVpp":  "2026-07-10 10:51"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2019",
@@ -815,7 +815,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  127000,
         "pct":  1.8,
-        "fechaVpp":  "2026-07-10 10:05"
+        "fechaVpp":  "2026-07-10"
     },
     {
         "anio":  "2020",
@@ -830,7 +830,7 @@ const DATA = [
         "c2b":  11990000,
         "diff":  -61000,
         "pct":  -0.51,
-        "fechaVpp":  "2026-07-09 18:11"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2023",
@@ -845,7 +845,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  -7000,
         "pct":  -0.1,
-        "fechaVpp":  "2026-07-09 17:50"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2015",
@@ -860,7 +860,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  -77000,
         "pct":  -1.15,
-        "fechaVpp":  "2026-07-09 17:34"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2018",
@@ -875,7 +875,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  68000,
         "pct":  0.78,
-        "fechaVpp":  "2026-07-09 17:27"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2023",
@@ -890,7 +890,7 @@ const DATA = [
         "c2b":  14590000,
         "diff":  369000,
         "pct":  2.59,
-        "fechaVpp":  "2026-07-09 17:15"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2021",
@@ -905,7 +905,7 @@ const DATA = [
         "c2b":  15990000,
         "diff":  460000,
         "pct":  2.96,
-        "fechaVpp":  "2026-07-09 16:56"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2020",
@@ -920,7 +920,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  -291000,
         "pct":  -5.31,
-        "fechaVpp":  "2026-07-09 16:55"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2023",
@@ -935,7 +935,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  12000,
         "pct":  0.12,
-        "fechaVpp":  "2026-07-09 16:31"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2019",
@@ -950,7 +950,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -1667000,
         "pct":  -21.77,
-        "fechaVpp":  "2026-07-09 16:13"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2022",
@@ -965,7 +965,7 @@ const DATA = [
         "c2b":  12290000,
         "diff":  586000,
         "pct":  5.01,
-        "fechaVpp":  "2026-07-09 16:05"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2020",
@@ -980,7 +980,7 @@ const DATA = [
         "c2b":  9790000,
         "diff":  186000,
         "pct":  1.94,
-        "fechaVpp":  "2026-07-09 15:52"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2018",
@@ -995,7 +995,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -91000,
         "pct":  -1.66,
-        "fechaVpp":  "2026-07-09 15:30"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2021",
@@ -1010,7 +1010,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  95000,
         "pct":  1.64,
-        "fechaVpp":  "2026-07-09 12:58"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2014",
@@ -1025,7 +1025,7 @@ const DATA = [
         "c2b":  2290000,
         "diff":  -27000,
         "pct":  -1.17,
-        "fechaVpp":  "2026-07-09 12:52"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2022",
@@ -1040,7 +1040,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  -71000,
         "pct":  -0.95,
-        "fechaVpp":  "2026-07-09 12:49"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2021",
@@ -1055,7 +1055,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  164000,
         "pct":  2.48,
-        "fechaVpp":  "2026-07-09 12:00"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2019",
@@ -1070,7 +1070,7 @@ const DATA = [
         "c2b":  7890000,
         "diff":  -21000,
         "pct":  -0.27,
-        "fechaVpp":  "2026-07-09 11:19"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2021",
@@ -1085,7 +1085,7 @@ const DATA = [
         "c2b":  9290000,
         "diff":  127000,
         "pct":  1.39,
-        "fechaVpp":  "2026-07-09 11:16"
+        "fechaVpp":  "2026-07-09"
     },
     {
         "anio":  "2022",
@@ -1100,7 +1100,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  168000,
         "pct":  1.64,
-        "fechaVpp":  "2026-07-08 18:32"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2023",
@@ -1115,7 +1115,7 @@ const DATA = [
         "c2b":  19490000,
         "diff":  953000,
         "pct":  5.14,
-        "fechaVpp":  "2026-07-08 17:46"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2023",
@@ -1130,7 +1130,7 @@ const DATA = [
         "c2b":  17290000,
         "diff":  277000,
         "pct":  1.63,
-        "fechaVpp":  "2026-07-08 17:39"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2023",
@@ -1145,7 +1145,7 @@ const DATA = [
         "c2b":  16890000,
         "diff":  -21000,
         "pct":  -0.12,
-        "fechaVpp":  "2026-07-08 17:30"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2023",
@@ -1160,7 +1160,7 @@ const DATA = [
         "c2b":  26890000,
         "diff":  1327000,
         "pct":  5.19,
-        "fechaVpp":  "2026-07-08 16:47"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2018",
@@ -1175,7 +1175,7 @@ const DATA = [
         "c2b":  10990000,
         "diff":  40000,
         "pct":  0.37,
-        "fechaVpp":  "2026-07-08 15:48"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2021",
@@ -1190,7 +1190,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  245000,
         "pct":  2.65,
-        "fechaVpp":  "2026-07-08 15:29"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2022",
@@ -1205,7 +1205,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -105000,
         "pct":  -1.07,
-        "fechaVpp":  "2026-07-08 13:24"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2020",
@@ -1220,7 +1220,7 @@ const DATA = [
         "c2b":  14090000,
         "diff":  193000,
         "pct":  1.39,
-        "fechaVpp":  "2026-07-08 12:47"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2021",
@@ -1235,7 +1235,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  -145000,
         "pct":  -1.52,
-        "fechaVpp":  "2026-07-08 12:20"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2023",
@@ -1250,7 +1250,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  303000,
         "pct":  2.61,
-        "fechaVpp":  "2026-07-08 11:13"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2021",
@@ -1265,7 +1265,7 @@ const DATA = [
         "c2b":  5490000,
         "diff":  316000,
         "pct":  6.11,
-        "fechaVpp":  "2026-07-08 11:00"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2021",
@@ -1280,7 +1280,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -127000,
         "pct":  -2.01,
-        "fechaVpp":  "2026-07-08 10:41"
+        "fechaVpp":  "2026-07-08"
     },
     {
         "anio":  "2021",
@@ -1295,7 +1295,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  71000,
         "pct":  0.59,
-        "fechaVpp":  "2026-07-07 18:43"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2023",
@@ -1310,7 +1310,7 @@ const DATA = [
         "c2b":  19890000,
         "diff":  918000,
         "pct":  4.84,
-        "fechaVpp":  "2026-07-07 18:29"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1325,7 +1325,7 @@ const DATA = [
         "c2b":  12390000,
         "diff":  476000,
         "pct":  4,
-        "fechaVpp":  "2026-07-07 18:01"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2020",
@@ -1340,7 +1340,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  125000,
         "pct":  2.21,
-        "fechaVpp":  "2026-07-07 17:31"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2021",
@@ -1355,7 +1355,7 @@ const DATA = [
         "c2b":  11490000,
         "diff":  321000,
         "pct":  2.87,
-        "fechaVpp":  "2026-07-07 16:04"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2023",
@@ -1370,7 +1370,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  249000,
         "pct":  2.34,
-        "fechaVpp":  "2026-07-07 15:30"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1385,7 +1385,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  353000,
         "pct":  3.7,
-        "fechaVpp":  "2026-07-07 15:22"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2019",
@@ -1400,7 +1400,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  923000,
         "pct":  14.5,
-        "fechaVpp":  "2026-07-07 14:53"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1415,7 +1415,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  238000,
         "pct":  4,
-        "fechaVpp":  "2026-07-07 14:48"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2019",
@@ -1430,7 +1430,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  55000,
         "pct":  0.77,
-        "fechaVpp":  "2026-07-07 14:26"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1445,7 +1445,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  987000,
         "pct":  9.05,
-        "fechaVpp":  "2026-07-07 14:10"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1460,7 +1460,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  -45000,
         "pct":  -0.45,
-        "fechaVpp":  "2026-07-07 13:30"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1475,7 +1475,7 @@ const DATA = [
         "c2b":  6090000,
         "diff":  295000,
         "pct":  5.09,
-        "fechaVpp":  "2026-07-07 12:59"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2021",
@@ -1490,7 +1490,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  245000,
         "pct":  2.65,
-        "fechaVpp":  "2026-07-07 12:55"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2023",
@@ -1505,7 +1505,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  86000,
         "pct":  0.82,
-        "fechaVpp":  "2026-07-07 12:18"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2023",
@@ -1520,7 +1520,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  43000,
         "pct":  0.61,
-        "fechaVpp":  "2026-07-07 12:15"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2018",
@@ -1535,7 +1535,7 @@ const DATA = [
         "c2b":  12290000,
         "diff":  93000,
         "pct":  0.76,
-        "fechaVpp":  "2026-07-07 11:53"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2023",
@@ -1550,7 +1550,7 @@ const DATA = [
         "c2b":  6390000,
         "diff":  178000,
         "pct":  2.87,
-        "fechaVpp":  "2026-07-07 11:44"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2018",
@@ -1565,7 +1565,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -46000,
         "pct":  -0.76,
-        "fechaVpp":  "2026-07-07 11:32"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2017",
@@ -1580,7 +1580,7 @@ const DATA = [
         "c2b":  12190000,
         "diff":  390000,
         "pct":  3.31,
-        "fechaVpp":  "2026-07-07 11:13"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1595,7 +1595,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  4000,
         "pct":  0.05,
-        "fechaVpp":  "2026-07-07 10:26"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2020",
@@ -1610,7 +1610,7 @@ const DATA = [
         "c2b":  9590000,
         "diff":  258000,
         "pct":  2.76,
-        "fechaVpp":  "2026-07-07 09:59"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2018",
@@ -1625,7 +1625,7 @@ const DATA = [
         "c2b":  13190000,
         "diff":  102000,
         "pct":  0.78,
-        "fechaVpp":  "2026-07-07 09:42"
+        "fechaVpp":  "2026-07-07"
     },
     {
         "anio":  "2022",
@@ -1640,7 +1640,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -11000,
         "pct":  -0.18,
-        "fechaVpp":  "2026-07-06 18:40"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2017",
@@ -1655,7 +1655,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  -316000,
         "pct":  -2.87,
-        "fechaVpp":  "2026-07-06 18:33"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2013",
@@ -1670,7 +1670,7 @@ const DATA = [
         "c2b":  3790000,
         "diff":  -102000,
         "pct":  -2.62,
-        "fechaVpp":  "2026-07-06 17:39"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2023",
@@ -1685,7 +1685,7 @@ const DATA = [
         "c2b":  17890000,
         "diff":  439000,
         "pct":  2.52,
-        "fechaVpp":  "2026-07-06 17:18"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2021",
@@ -1700,7 +1700,7 @@ const DATA = [
         "c2b":  18490000,
         "diff":  701000,
         "pct":  3.94,
-        "fechaVpp":  "2026-07-06 16:55"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2014",
@@ -1715,7 +1715,7 @@ const DATA = [
         "c2b":  3190000,
         "diff":  -102000,
         "pct":  -3.1,
-        "fechaVpp":  "2026-07-06 16:09"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2023",
@@ -1730,7 +1730,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  197000,
         "pct":  1.99,
-        "fechaVpp":  "2026-07-06 16:08"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2018",
@@ -1745,7 +1745,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  -144000,
         "pct":  -2.39,
-        "fechaVpp":  "2026-07-06 15:55"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1760,7 +1760,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  491000,
         "pct":  8.62,
-        "fechaVpp":  "2026-07-06 15:41"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2017",
@@ -1775,7 +1775,7 @@ const DATA = [
         "c2b":  7990000,
         "diff":  -91000,
         "pct":  -1.13,
-        "fechaVpp":  "2026-07-06 15:35"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1790,7 +1790,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  -41000,
         "pct":  -0.6,
-        "fechaVpp":  "2026-07-06 14:06"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2020",
@@ -1805,7 +1805,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -73000,
         "pct":  -1.2,
-        "fechaVpp":  "2026-07-06 13:48"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1820,7 +1820,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -11000,
         "pct":  -0.18,
-        "fechaVpp":  "2026-07-06 13:36"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1835,7 +1835,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  -61000,
         "pct":  -0.81,
-        "fechaVpp":  "2026-07-06 12:20"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2018",
@@ -1850,7 +1850,7 @@ const DATA = [
         "c2b":  11390000,
         "diff":  1873000,
         "pct":  19.68,
-        "fechaVpp":  "2026-07-06 12:14"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1865,7 +1865,7 @@ const DATA = [
         "c2b":  16590000,
         "diff":  1738000,
         "pct":  11.7,
-        "fechaVpp":  "2026-07-06 11:46"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2020",
@@ -1880,7 +1880,7 @@ const DATA = [
         "c2b":  14090000,
         "diff":  1245000,
         "pct":  9.69,
-        "fechaVpp":  "2026-07-06 11:09"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2023",
@@ -1895,7 +1895,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  331000,
         "pct":  3.2,
-        "fechaVpp":  "2026-07-06 10:50"
+        "fechaVpp":  "2026-07-06"
     },
     {
         "anio":  "2022",
@@ -1910,7 +1910,7 @@ const DATA = [
         "c2b":  9790000,
         "diff":  -11000,
         "pct":  -0.11,
-        "fechaVpp":  "2026-07-05 18:24"
+        "fechaVpp":  "2026-07-05"
     },
     {
         "anio":  "2018",
@@ -1925,7 +1925,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -36000,
         "pct":  -0.66,
-        "fechaVpp":  "2026-07-05 15:26"
+        "fechaVpp":  "2026-07-05"
     },
     {
         "anio":  "2023",
@@ -1940,7 +1940,7 @@ const DATA = [
         "c2b":  16090000,
         "diff":  547000,
         "pct":  3.52,
-        "fechaVpp":  "2026-07-05 13:58"
+        "fechaVpp":  "2026-07-05"
     },
     {
         "anio":  "2018",
@@ -1955,7 +1955,7 @@ const DATA = [
         "c2b":  6390000,
         "diff":  -81000,
         "pct":  -1.25,
-        "fechaVpp":  "2026-07-05 13:49"
+        "fechaVpp":  "2026-07-05"
     },
     {
         "anio":  "2019",
@@ -1970,7 +1970,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  -1765000,
         "pct":  -21.91,
-        "fechaVpp":  "2026-07-05 11:32"
+        "fechaVpp":  "2026-07-05"
     },
     {
         "anio":  "2017",
@@ -1985,7 +1985,7 @@ const DATA = [
         "c2b":  7590000,
         "diff":  -45000,
         "pct":  -0.59,
-        "fechaVpp":  "2026-07-04 21:24"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2014",
@@ -2000,7 +2000,7 @@ const DATA = [
         "c2b":  4290000,
         "diff":  173000,
         "pct":  4.2,
-        "fechaVpp":  "2026-07-04 17:35"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2022",
@@ -2015,7 +2015,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  -177000,
         "pct":  -1.97,
-        "fechaVpp":  "2026-07-04 16:52"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2017",
@@ -2030,7 +2030,7 @@ const DATA = [
         "c2b":  9190000,
         "diff":  218000,
         "pct":  2.43,
-        "fechaVpp":  "2026-07-04 16:47"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2023",
@@ -2045,7 +2045,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  86000,
         "pct":  0.8,
-        "fechaVpp":  "2026-07-04 16:26"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2016",
@@ -2060,7 +2060,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  1148000,
         "pct":  13.44,
-        "fechaVpp":  "2026-07-04 13:57"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2019",
@@ -2075,7 +2075,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  -41000,
         "pct":  -0.43,
-        "fechaVpp":  "2026-07-04 13:45"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2021",
@@ -2090,7 +2090,7 @@ const DATA = [
         "c2b":  15890000,
         "diff":  223000,
         "pct":  1.42,
-        "fechaVpp":  "2026-07-04 13:33"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2019",
@@ -2105,7 +2105,7 @@ const DATA = [
         "c2b":  13790000,
         "diff":  121000,
         "pct":  0.89,
-        "fechaVpp":  "2026-07-04 12:55"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2018",
@@ -2120,7 +2120,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  4000,
         "pct":  0.05,
-        "fechaVpp":  "2026-07-04 12:41"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2019",
@@ -2135,7 +2135,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  -109000,
         "pct":  -1.85,
-        "fechaVpp":  "2026-07-04 12:40"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2015",
@@ -2150,7 +2150,7 @@ const DATA = [
         "c2b":  4690000,
         "diff":  -102000,
         "pct":  -2.13,
-        "fechaVpp":  "2026-07-04 12:32"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2018",
@@ -2165,7 +2165,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  948000,
         "pct":  16.23,
-        "fechaVpp":  "2026-07-04 11:34"
+        "fechaVpp":  "2026-07-04"
     },
     {
         "anio":  "2023",
@@ -2180,7 +2180,7 @@ const DATA = [
         "c2b":  16890000,
         "diff":  994000,
         "pct":  6.25,
-        "fechaVpp":  "2026-07-03 17:14"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2016",
@@ -2195,7 +2195,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  187000,
         "pct":  2.15,
-        "fechaVpp":  "2026-07-03 17:14"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2021",
@@ -2210,7 +2210,7 @@ const DATA = [
         "c2b":  5690000,
         "diff":  55000,
         "pct":  0.98,
-        "fechaVpp":  "2026-07-03 16:54"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2023",
@@ -2225,7 +2225,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  468000,
         "pct":  4.49,
-        "fechaVpp":  "2026-07-03 16:42"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2023",
@@ -2240,7 +2240,7 @@ const DATA = [
         "c2b":  12590000,
         "diff":  83000,
         "pct":  0.66,
-        "fechaVpp":  "2026-07-03 16:30"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2019",
@@ -2255,7 +2255,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  564000,
         "pct":  8.14,
-        "fechaVpp":  "2026-07-03 16:01"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2023",
@@ -2270,7 +2270,7 @@ const DATA = [
         "c2b":  14490000,
         "diff":  65000,
         "pct":  0.45,
-        "fechaVpp":  "2026-07-03 15:23"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2018",
@@ -2285,7 +2285,7 @@ const DATA = [
         "c2b":  10290000,
         "diff":  382000,
         "pct":  3.86,
-        "fechaVpp":  "2026-07-03 14:12"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2017",
@@ -2300,7 +2300,7 @@ const DATA = [
         "c2b":  10290000,
         "diff":  -51000,
         "pct":  -0.49,
-        "fechaVpp":  "2026-07-03 12:51"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2023",
@@ -2315,7 +2315,7 @@ const DATA = [
         "c2b":  18790000,
         "diff":  -289000,
         "pct":  -1.51,
-        "fechaVpp":  "2026-07-03 12:44"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2022",
@@ -2330,7 +2330,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  401000,
         "pct":  4.14,
-        "fechaVpp":  "2026-07-03 11:48"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2019",
@@ -2345,7 +2345,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  978000,
         "pct":  12.52,
-        "fechaVpp":  "2026-07-03 11:47"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2021",
@@ -2360,7 +2360,7 @@ const DATA = [
         "c2b":  8190000,
         "diff":  85000,
         "pct":  1.05,
-        "fechaVpp":  "2026-07-03 10:53"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2023",
@@ -2375,7 +2375,7 @@ const DATA = [
         "c2b":  23290000,
         "diff":  133000,
         "pct":  0.57,
-        "fechaVpp":  "2026-07-03 10:42"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2017",
@@ -2390,7 +2390,7 @@ const DATA = [
         "c2b":  11390000,
         "diff":  -39000,
         "pct":  -0.34,
-        "fechaVpp":  "2026-07-03 10:41"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2016",
@@ -2405,7 +2405,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  -136000,
         "pct":  -1.58,
-        "fechaVpp":  "2026-07-03 10:32"
+        "fechaVpp":  "2026-07-03"
     },
     {
         "anio":  "2022",
@@ -2420,7 +2420,7 @@ const DATA = [
         "c2b":  6090000,
         "diff":  62000,
         "pct":  1.03,
-        "fechaVpp":  "2026-07-02 17:02"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2020",
@@ -2435,7 +2435,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  528000,
         "pct":  10.86,
-        "fechaVpp":  "2026-07-02 16:38"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2023",
@@ -2450,7 +2450,7 @@ const DATA = [
         "c2b":  17190000,
         "diff":  -523000,
         "pct":  -2.95,
-        "fechaVpp":  "2026-07-02 16:27"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2018",
@@ -2465,7 +2465,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  -22000,
         "pct":  -0.33,
-        "fechaVpp":  "2026-07-02 16:02"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2017",
@@ -2480,7 +2480,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  665000,
         "pct":  12.98,
-        "fechaVpp":  "2026-07-02 15:54"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2018",
@@ -2495,7 +2495,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  -285000,
         "pct":  -3.81,
-        "fechaVpp":  "2026-07-02 15:07"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2023",
@@ -2510,7 +2510,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -168000,
         "pct":  -1.62,
-        "fechaVpp":  "2026-07-02 14:41"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2022",
@@ -2525,7 +2525,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -191000,
         "pct":  -2.99,
-        "fechaVpp":  "2026-07-02 14:29"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2022",
@@ -2540,7 +2540,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  14000,
         "pct":  0.2,
-        "fechaVpp":  "2026-07-02 14:23"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2018",
@@ -2555,7 +2555,7 @@ const DATA = [
         "c2b":  5090000,
         "diff":  59000,
         "pct":  1.17,
-        "fechaVpp":  "2026-07-02 12:58"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2013",
@@ -2570,7 +2570,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -27000,
         "pct":  -0.43,
-        "fechaVpp":  "2026-07-02 12:39"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2022",
@@ -2585,7 +2585,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  175000,
         "pct":  2.03,
-        "fechaVpp":  "2026-07-02 11:56"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2023",
@@ -2600,7 +2600,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  32000,
         "pct":  0.31,
-        "fechaVpp":  "2026-07-02 11:52"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2019",
@@ -2615,7 +2615,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -538000,
         "pct":  -4.83,
-        "fechaVpp":  "2026-07-02 11:45"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2023",
@@ -2630,7 +2630,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  226000,
         "pct":  3.11,
-        "fechaVpp":  "2026-07-02 11:15"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2022",
@@ -2645,7 +2645,7 @@ const DATA = [
         "c2b":  18790000,
         "diff":  417000,
         "pct":  2.27,
-        "fechaVpp":  "2026-07-02 11:03"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2018",
@@ -2660,7 +2660,7 @@ const DATA = [
         "c2b":  11690000,
         "diff":  716000,
         "pct":  6.52,
-        "fechaVpp":  "2026-07-02 10:05"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2021",
@@ -2675,7 +2675,7 @@ const DATA = [
         "c2b":  14190000,
         "diff":  -31000,
         "pct":  -0.22,
-        "fechaVpp":  "2026-07-02 10:01"
+        "fechaVpp":  "2026-07-02"
     },
     {
         "anio":  "2022",
@@ -2690,7 +2690,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  0,
         "pct":  0,
-        "fechaVpp":  "2026-07-01 18:16"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2705,7 +2705,7 @@ const DATA = [
         "c2b":  5590000,
         "diff":  -89000,
         "pct":  -1.57,
-        "fechaVpp":  "2026-07-01 18:12"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2022",
@@ -2720,7 +2720,7 @@ const DATA = [
         "c2b":  13290000,
         "diff":  132000,
         "pct":  1,
-        "fechaVpp":  "2026-07-01 17:57"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2735,7 +2735,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  738000,
         "pct":  9.52,
-        "fechaVpp":  "2026-07-01 17:06"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2022",
@@ -2750,7 +2750,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  4000,
         "pct":  0.04,
-        "fechaVpp":  "2026-07-01 16:40"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2024",
@@ -2765,7 +2765,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-07-01 16:34"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2023",
@@ -2780,7 +2780,7 @@ const DATA = [
         "c2b":  13190000,
         "diff":  453000,
         "pct":  3.56,
-        "fechaVpp":  "2026-07-01 16:12"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2795,7 +2795,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  789000,
         "pct":  15.47,
-        "fechaVpp":  "2026-07-01 16:04"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2810,7 +2810,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  349000,
         "pct":  2.97,
-        "fechaVpp":  "2026-07-01 16:02"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2023",
@@ -2825,7 +2825,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -245000,
         "pct":  -3.34,
-        "fechaVpp":  "2026-07-01 15:32"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2019",
@@ -2840,7 +2840,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -99000,
         "pct":  -1.63,
-        "fechaVpp":  "2026-07-01 15:22"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2855,7 +2855,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -49000,
         "pct":  -0.79,
-        "fechaVpp":  "2026-07-01 15:15"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2018",
@@ -2870,7 +2870,7 @@ const DATA = [
         "c2b":  10990000,
         "diff":  -154000,
         "pct":  -1.38,
-        "fechaVpp":  "2026-07-01 15:06"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2023",
@@ -2885,7 +2885,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  -144000,
         "pct":  -1.67,
-        "fechaVpp":  "2026-07-01 14:41"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2017",
@@ -2900,7 +2900,7 @@ const DATA = [
         "c2b":  9990000,
         "diff":  1373000,
         "pct":  15.93,
-        "fechaVpp":  "2026-07-01 14:25"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2020",
@@ -2915,7 +2915,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -214000,
         "pct":  -3.82,
-        "fechaVpp":  "2026-07-01 14:18"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2930,7 +2930,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  -73000,
         "pct":  -0.81,
-        "fechaVpp":  "2026-07-01 14:12"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2945,7 +2945,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  39000,
         "pct":  0.6,
-        "fechaVpp":  "2026-07-01 13:18"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2021",
@@ -2960,7 +2960,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -73000,
         "pct":  -1.17,
-        "fechaVpp":  "2026-07-01 12:06"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2013",
@@ -2975,7 +2975,7 @@ const DATA = [
         "c2b":  2590000,
         "diff":  -102000,
         "pct":  -3.79,
-        "fechaVpp":  "2026-07-01 11:39"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2022",
@@ -2990,7 +2990,7 @@ const DATA = [
         "c2b":  18090000,
         "diff":  -36000,
         "pct":  -0.2,
-        "fechaVpp":  "2026-07-01 11:39"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2015",
@@ -3005,7 +3005,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  -702000,
         "pct":  -13.79,
-        "fechaVpp":  "2026-07-01 11:24"
+        "fechaVpp":  "2026-07-01"
     },
     {
         "anio":  "2022",
@@ -3020,7 +3020,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  -291000,
         "pct":  -3.2,
-        "fechaVpp":  "2026-06-30 17:59"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2021",
@@ -3035,7 +3035,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  62000,
         "pct":  0.66,
-        "fechaVpp":  "2026-06-30 17:44"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2022",
@@ -3050,7 +3050,7 @@ const DATA = [
         "c2b":  9090000,
         "diff":  200000,
         "pct":  2.25,
-        "fechaVpp":  "2026-06-30 17:23"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2021",
@@ -3065,7 +3065,7 @@ const DATA = [
         "c2b":  18490000,
         "diff":  -2111000,
         "pct":  -10.25,
-        "fechaVpp":  "2026-06-30 17:17"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2023",
@@ -3080,7 +3080,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  9000,
         "pct":  0.1,
-        "fechaVpp":  "2026-06-30 17:00"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2017",
@@ -3095,7 +3095,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  226000,
         "pct":  4.74,
-        "fechaVpp":  "2026-06-30 16:40"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2022",
@@ -3110,7 +3110,7 @@ const DATA = [
         "c2b":  12890000,
         "diff":  503000,
         "pct":  4.06,
-        "fechaVpp":  "2026-06-30 16:02"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2019",
@@ -3125,7 +3125,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  -175000,
         "pct":  -3.39,
-        "fechaVpp":  "2026-06-30 15:17"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2012",
@@ -3140,7 +3140,7 @@ const DATA = [
         "c2b":  4690000,
         "diff":  -552000,
         "pct":  -10.53,
-        "fechaVpp":  "2026-06-30 13:24"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2019",
@@ -3155,7 +3155,7 @@ const DATA = [
         "c2b":  5090000,
         "diff":  475000,
         "pct":  10.29,
-        "fechaVpp":  "2026-06-30 13:16"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2022",
@@ -3170,7 +3170,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  -32000,
         "pct":  -0.37,
-        "fechaVpp":  "2026-06-30 12:40"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2018",
@@ -3185,7 +3185,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -120000,
         "pct":  -2.18,
-        "fechaVpp":  "2026-06-30 11:51"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2019",
@@ -3200,7 +3200,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  -180000,
         "pct":  -2.62,
-        "fechaVpp":  "2026-06-30 11:30"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2020",
@@ -3215,7 +3215,7 @@ const DATA = [
         "c2b":  7590000,
         "diff":  -51000,
         "pct":  -0.67,
-        "fechaVpp":  "2026-06-30 11:09"
+        "fechaVpp":  "2026-06-30"
     },
     {
         "anio":  "2022",
@@ -3230,7 +3230,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  29000,
         "pct":  0.29,
-        "fechaVpp":  "2026-06-29 17:26"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2017",
@@ -3245,7 +3245,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  -181000,
         "pct":  -1.97,
-        "fechaVpp":  "2026-06-29 14:30"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2021",
@@ -3260,7 +3260,7 @@ const DATA = [
         "c2b":  12690000,
         "diff":  -15000,
         "pct":  -0.12,
-        "fechaVpp":  "2026-06-29 14:13"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2021",
@@ -3275,7 +3275,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -436000,
         "pct":  -6.58,
-        "fechaVpp":  "2026-06-29 13:55"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2023",
@@ -3290,7 +3290,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  -97000,
         "pct":  -1.02,
-        "fechaVpp":  "2026-06-29 13:52"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2016",
@@ -3305,7 +3305,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -222000,
         "pct":  -3.57,
-        "fechaVpp":  "2026-06-29 13:17"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2018",
@@ -3320,7 +3320,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  -105000,
         "pct":  -1.55,
-        "fechaVpp":  "2026-06-29 12:27"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2024",
@@ -3335,7 +3335,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-29 12:04"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2017",
@@ -3350,7 +3350,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -201000,
         "pct":  -1.86,
-        "fechaVpp":  "2026-06-29 11:58"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2019",
@@ -3365,7 +3365,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  211000,
         "pct":  3.16,
-        "fechaVpp":  "2026-06-29 11:35"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2021",
@@ -3380,7 +3380,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  -222000,
         "pct":  -3.17,
-        "fechaVpp":  "2026-06-29 11:34"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2015",
@@ -3395,7 +3395,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  -177000,
         "pct":  -1.95,
-        "fechaVpp":  "2026-06-29 10:58"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2018",
@@ -3410,7 +3410,7 @@ const DATA = [
         "c2b":  9090000,
         "diff":  9000,
         "pct":  0.1,
-        "fechaVpp":  "2026-06-29 10:47"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2022",
@@ -3425,7 +3425,7 @@ const DATA = [
         "c2b":  15690000,
         "diff":  493000,
         "pct":  3.24,
-        "fechaVpp":  "2026-06-29 10:19"
+        "fechaVpp":  "2026-06-29"
     },
     {
         "anio":  "2024",
@@ -3440,7 +3440,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-28 16:44"
+        "fechaVpp":  "2026-06-28"
     },
     {
         "anio":  "2016",
@@ -3455,7 +3455,7 @@ const DATA = [
         "c2b":  11990000,
         "diff":  2248000,
         "pct":  23.08,
-        "fechaVpp":  "2026-06-28 13:16"
+        "fechaVpp":  "2026-06-28"
     },
     {
         "anio":  "2022",
@@ -3470,7 +3470,7 @@ const DATA = [
         "c2b":  7790000,
         "diff":  -236000,
         "pct":  -2.94,
-        "fechaVpp":  "2026-06-27 17:40"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2024",
@@ -3485,7 +3485,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-27 17:13"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2017",
@@ -3500,7 +3500,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -101000,
         "pct":  -1.53,
-        "fechaVpp":  "2026-06-27 17:04"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2022",
@@ -3515,7 +3515,7 @@ const DATA = [
         "c2b":  6990000,
         "diff":  887000,
         "pct":  14.53,
-        "fechaVpp":  "2026-06-27 16:11"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2019",
@@ -3530,7 +3530,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  530000,
         "pct":  5.92,
-        "fechaVpp":  "2026-06-27 15:59"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2021",
@@ -3545,7 +3545,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  301000,
         "pct":  4.86,
-        "fechaVpp":  "2026-06-27 13:42"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2020",
@@ -3560,7 +3560,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  798000,
         "pct":  12.68,
-        "fechaVpp":  "2026-06-27 13:41"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2023",
@@ -3575,7 +3575,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -3000,
         "pct":  -0.03,
-        "fechaVpp":  "2026-06-27 13:41"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2022",
@@ -3590,7 +3590,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  -97000,
         "pct":  -1.1,
-        "fechaVpp":  "2026-06-27 13:41"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2022",
@@ -3605,7 +3605,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  49000,
         "pct":  0.73,
-        "fechaVpp":  "2026-06-27 13:05"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2022",
@@ -3620,7 +3620,7 @@ const DATA = [
         "c2b":  7890000,
         "diff":  224000,
         "pct":  2.92,
-        "fechaVpp":  "2026-06-27 12:09"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2023",
@@ -3635,7 +3635,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  50000,
         "pct":  0.54,
-        "fechaVpp":  "2026-06-27 11:49"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2024",
@@ -3650,7 +3650,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-27 11:28"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2015",
@@ -3665,7 +3665,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-27 10:30"
+        "fechaVpp":  "2026-06-27"
     },
     {
         "anio":  "2020",
@@ -3680,7 +3680,7 @@ const DATA = [
         "c2b":  10290000,
         "diff":  1148000,
         "pct":  12.56,
-        "fechaVpp":  "2026-06-26 18:48"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2023",
@@ -3695,7 +3695,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  163000,
         "pct":  1.49,
-        "fechaVpp":  "2026-06-26 18:16"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2014",
@@ -3710,7 +3710,7 @@ const DATA = [
         "c2b":  2790000,
         "diff":  -52000,
         "pct":  -1.83,
-        "fechaVpp":  "2026-06-26 17:47"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2019",
@@ -3725,7 +3725,7 @@ const DATA = [
         "c2b":  9590000,
         "diff":  -211000,
         "pct":  -2.15,
-        "fechaVpp":  "2026-06-26 17:42"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2023",
@@ -3740,7 +3740,7 @@ const DATA = [
         "c2b":  11190000,
         "diff":  859000,
         "pct":  8.31,
-        "fechaVpp":  "2026-06-26 17:41"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2021",
@@ -3755,7 +3755,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  86000,
         "pct":  0.82,
-        "fechaVpp":  "2026-06-26 17:17"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2021",
@@ -3770,7 +3770,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -94000,
         "pct":  -1.43,
-        "fechaVpp":  "2026-06-26 16:12"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2022",
@@ -3785,7 +3785,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  146000,
         "pct":  2.2,
-        "fechaVpp":  "2026-06-26 15:57"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2024",
@@ -3800,7 +3800,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-26 15:53"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2022",
@@ -3815,7 +3815,7 @@ const DATA = [
         "c2b":  14890000,
         "diff":  450000,
         "pct":  3.12,
-        "fechaVpp":  "2026-06-26 15:29"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2021",
@@ -3830,7 +3830,7 @@ const DATA = [
         "c2b":  11290000,
         "diff":  136000,
         "pct":  1.22,
-        "fechaVpp":  "2026-06-26 15:21"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2018",
@@ -3845,7 +3845,7 @@ const DATA = [
         "c2b":  9290000,
         "diff":  -812000,
         "pct":  -8.04,
-        "fechaVpp":  "2026-06-26 15:01"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2021",
@@ -3860,7 +3860,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  -317000,
         "pct":  -3.48,
-        "fechaVpp":  "2026-06-26 15:00"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2022",
@@ -3875,7 +3875,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  -61000,
         "pct":  -0.55,
-        "fechaVpp":  "2026-06-26 13:45"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2021",
@@ -3890,7 +3890,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  56000,
         "pct":  0.83,
-        "fechaVpp":  "2026-06-26 12:42"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2024",
@@ -3905,7 +3905,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-26 10:58"
+        "fechaVpp":  "2026-06-26"
     },
     {
         "anio":  "2020",
@@ -3920,7 +3920,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-25 18:08"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2021",
@@ -3935,7 +3935,7 @@ const DATA = [
         "c2b":  11690000,
         "diff":  -299000,
         "pct":  -2.49,
-        "fechaVpp":  "2026-06-25 17:34"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2020",
@@ -3950,7 +3950,7 @@ const DATA = [
         "c2b":  9290000,
         "diff":  744000,
         "pct":  8.71,
-        "fechaVpp":  "2026-06-25 17:32"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2022",
@@ -3965,7 +3965,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  3000,
         "pct":  0.03,
-        "fechaVpp":  "2026-06-25 17:30"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2023",
@@ -3980,7 +3980,7 @@ const DATA = [
         "c2b":  11490000,
         "diff":  175000,
         "pct":  1.55,
-        "fechaVpp":  "2026-06-25 17:23"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2013",
@@ -3995,7 +3995,7 @@ const DATA = [
         "c2b":  2890000,
         "diff":  -627000,
         "pct":  -17.83,
-        "fechaVpp":  "2026-06-25 17:10"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2018",
@@ -4010,7 +4010,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  1148000,
         "pct":  20.71,
-        "fechaVpp":  "2026-06-25 17:06"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2015",
@@ -4025,7 +4025,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -252000,
         "pct":  -3.91,
-        "fechaVpp":  "2026-06-25 16:54"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2019",
@@ -4040,7 +4040,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  2048000,
         "pct":  14.38,
-        "fechaVpp":  "2026-06-25 15:55"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2022",
@@ -4055,7 +4055,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -47000,
         "pct":  -0.46,
-        "fechaVpp":  "2026-06-25 14:17"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2014",
@@ -4070,7 +4070,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -477000,
         "pct":  -6.85,
-        "fechaVpp":  "2026-06-25 14:07"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2019",
@@ -4085,7 +4085,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  507000,
         "pct":  8.92,
-        "fechaVpp":  "2026-06-25 13:20"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2021",
@@ -4100,7 +4100,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  -183000,
         "pct":  -1.65,
-        "fechaVpp":  "2026-06-25 13:17"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2023",
@@ -4115,7 +4115,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -474000,
         "pct":  -6.27,
-        "fechaVpp":  "2026-06-25 12:50"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2022",
@@ -4130,7 +4130,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -102000,
         "pct":  -0.99,
-        "fechaVpp":  "2026-06-25 12:17"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2020",
@@ -4145,7 +4145,7 @@ const DATA = [
         "c2b":  14390000,
         "diff":  -839000,
         "pct":  -5.51,
-        "fechaVpp":  "2026-06-25 12:07"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2018",
@@ -4160,7 +4160,7 @@ const DATA = [
         "c2b":  12390000,
         "diff":  2423000,
         "pct":  24.31,
-        "fechaVpp":  "2026-06-25 12:03"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2018",
@@ -4175,7 +4175,7 @@ const DATA = [
         "c2b":  6390000,
         "diff":  698000,
         "pct":  12.26,
-        "fechaVpp":  "2026-06-25 11:35"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2020",
@@ -4190,7 +4190,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  752000,
         "pct":  9.47,
-        "fechaVpp":  "2026-06-25 11:28"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2022",
@@ -4205,7 +4205,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  -97000,
         "pct":  -1.08,
-        "fechaVpp":  "2026-06-25 11:27"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2024",
@@ -4220,7 +4220,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-25 11:21"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2015",
@@ -4235,7 +4235,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  -627000,
         "pct":  -11.16,
-        "fechaVpp":  "2026-06-25 10:21"
+        "fechaVpp":  "2026-06-25"
     },
     {
         "anio":  "2019",
@@ -4250,7 +4250,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  -554000,
         "pct":  -4.45,
-        "fechaVpp":  "2026-06-24 18:38"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2019",
@@ -4265,7 +4265,7 @@ const DATA = [
         "c2b":  10990000,
         "diff":  -431000,
         "pct":  -3.77,
-        "fechaVpp":  "2026-06-24 17:47"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2021",
@@ -4280,7 +4280,7 @@ const DATA = [
         "c2b":  12290000,
         "diff":  -158000,
         "pct":  -1.27,
-        "fechaVpp":  "2026-06-24 16:49"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2020",
@@ -4295,7 +4295,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  202000,
         "pct":  3.37,
-        "fechaVpp":  "2026-06-24 16:47"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2020",
@@ -4310,7 +4310,7 @@ const DATA = [
         "c2b":  13490000,
         "diff":  1273000,
         "pct":  10.42,
-        "fechaVpp":  "2026-06-24 16:37"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2017",
@@ -4325,7 +4325,7 @@ const DATA = [
         "c2b":  5290000,
         "diff":  -101000,
         "pct":  -1.87,
-        "fechaVpp":  "2026-06-24 16:10"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2022",
@@ -4340,7 +4340,7 @@ const DATA = [
         "c2b":  12390000,
         "diff":  -213000,
         "pct":  -1.69,
-        "fechaVpp":  "2026-06-24 15:15"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2018",
@@ -4355,7 +4355,7 @@ const DATA = [
         "c2b":  5090000,
         "diff":  -391000,
         "pct":  -7.13,
-        "fechaVpp":  "2026-06-24 15:03"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2016",
@@ -4370,7 +4370,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  -190000,
         "pct":  -1.88,
-        "fechaVpp":  "2026-06-24 14:39"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2022",
@@ -4385,7 +4385,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  1005000,
         "pct":  9.97,
-        "fechaVpp":  "2026-06-24 14:34"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2019",
@@ -4400,7 +4400,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  741000,
         "pct":  11.14,
-        "fechaVpp":  "2026-06-24 14:01"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2021",
@@ -4415,7 +4415,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  -233000,
         "pct":  -3.81,
-        "fechaVpp":  "2026-06-24 13:21"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2014",
@@ -4430,7 +4430,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  -552000,
         "pct":  -6.95,
-        "fechaVpp":  "2026-06-24 13:10"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2020",
@@ -4445,7 +4445,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  -341000,
         "pct":  -4.35,
-        "fechaVpp":  "2026-06-24 12:54"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2023",
@@ -4460,7 +4460,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  -274000,
         "pct":  -3.62,
-        "fechaVpp":  "2026-06-24 11:39"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2021",
@@ -4475,7 +4475,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  -158000,
         "pct":  -2.24,
-        "fechaVpp":  "2026-06-24 11:26"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2018",
@@ -4490,7 +4490,7 @@ const DATA = [
         "c2b":  9290000,
         "diff":  -66000,
         "pct":  -0.71,
-        "fechaVpp":  "2026-06-24 11:03"
+        "fechaVpp":  "2026-06-24"
     },
     {
         "anio":  "2022",
@@ -4505,7 +4505,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  -719000,
         "pct":  -4.23,
-        "fechaVpp":  "2026-06-23 21:02"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2021",
@@ -4520,7 +4520,7 @@ const DATA = [
         "c2b":  14590000,
         "diff":  -1730000,
         "pct":  -10.6,
-        "fechaVpp":  "2026-06-23 18:27"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2019",
@@ -4535,7 +4535,7 @@ const DATA = [
         "c2b":  4090000,
         "diff":  1000,
         "pct":  0.02,
-        "fechaVpp":  "2026-06-23 16:17"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2024",
@@ -4550,7 +4550,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-23 15:56"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2024",
@@ -4565,7 +4565,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-23 14:48"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2022",
@@ -4580,7 +4580,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -127000,
         "pct":  -2.01,
-        "fechaVpp":  "2026-06-23 13:29"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2020",
@@ -4595,7 +4595,7 @@ const DATA = [
         "c2b":  17590000,
         "diff":  1449000,
         "pct":  8.98,
-        "fechaVpp":  "2026-06-23 13:16"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2019",
@@ -4610,7 +4610,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  120000,
         "pct":  1.43,
-        "fechaVpp":  "2026-06-23 13:05"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2017",
@@ -4625,7 +4625,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  44000,
         "pct":  0.86,
-        "fechaVpp":  "2026-06-23 12:52"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2018",
@@ -4640,7 +4640,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -437000,
         "pct":  -5.81,
-        "fechaVpp":  "2026-06-23 12:22"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2018",
@@ -4655,7 +4655,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  -341000,
         "pct":  -3.27,
-        "fechaVpp":  "2026-06-23 12:08"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2023",
@@ -4670,7 +4670,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  -421000,
         "pct":  -3.66,
-        "fechaVpp":  "2026-06-23 11:38"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2022",
@@ -4685,7 +4685,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  973000,
         "pct":  18.3,
-        "fechaVpp":  "2026-06-23 11:13"
+        "fechaVpp":  "2026-06-23"
     },
     {
         "anio":  "2018",
@@ -4700,7 +4700,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  -22000,
         "pct":  -0.33,
-        "fechaVpp":  "2026-06-22 17:36"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2018",
@@ -4715,7 +4715,7 @@ const DATA = [
         "c2b":  9790000,
         "diff":  1698000,
         "pct":  20.98,
-        "fechaVpp":  "2026-06-22 17:34"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2023",
@@ -4730,7 +4730,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  -286000,
         "pct":  -4.63,
-        "fechaVpp":  "2026-06-22 17:33"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2022",
@@ -4745,7 +4745,7 @@ const DATA = [
         "c2b":  14790000,
         "diff":  198000,
         "pct":  1.36,
-        "fechaVpp":  "2026-06-22 17:23"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2014",
@@ -4760,7 +4760,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -627000,
         "pct":  -8.81,
-        "fechaVpp":  "2026-06-22 16:36"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2022",
@@ -4775,7 +4775,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  -229000,
         "pct":  -3.22,
-        "fechaVpp":  "2026-06-22 16:29"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2017",
@@ -4790,7 +4790,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  417000,
         "pct":  6.25,
-        "fechaVpp":  "2026-06-22 15:59"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2024",
@@ -4805,7 +4805,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-22 15:20"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2021",
@@ -4820,7 +4820,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  -193000,
         "pct":  -2.61,
-        "fechaVpp":  "2026-06-22 14:16"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2016",
@@ -4835,7 +4835,7 @@ const DATA = [
         "c2b":  4690000,
         "diff":  -11000,
         "pct":  -0.23,
-        "fechaVpp":  "2026-06-22 12:23"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2021",
@@ -4850,7 +4850,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  -56000,
         "pct":  -0.66,
-        "fechaVpp":  "2026-06-22 12:21"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2016",
@@ -4865,7 +4865,7 @@ const DATA = [
         "c2b":  11390000,
         "diff":  -240000,
         "pct":  -2.06,
-        "fechaVpp":  "2026-06-22 11:12"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2015",
@@ -4880,7 +4880,7 @@ const DATA = [
         "c2b":  5690000,
         "diff":  -977000,
         "pct":  -14.65,
-        "fechaVpp":  "2026-06-22 11:12"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2023",
@@ -4895,7 +4895,7 @@ const DATA = [
         "c2b":  12990000,
         "diff":  733000,
         "pct":  5.98,
-        "fechaVpp":  "2026-06-22 10:54"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2023",
@@ -4910,7 +4910,7 @@ const DATA = [
         "c2b":  12190000,
         "diff":  190000,
         "pct":  1.58,
-        "fechaVpp":  "2026-06-22 10:50"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2021",
@@ -4925,7 +4925,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  -74000,
         "pct":  -0.98,
-        "fechaVpp":  "2026-06-22 10:44"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2017",
@@ -4940,7 +4940,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -460000,
         "pct":  -6.09,
-        "fechaVpp":  "2026-06-22 10:35"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2022",
@@ -4955,7 +4955,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  49000,
         "pct":  0.73,
-        "fechaVpp":  "2026-06-22 10:06"
+        "fechaVpp":  "2026-06-22"
     },
     {
         "anio":  "2024",
@@ -4970,7 +4970,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-21 18:30"
+        "fechaVpp":  "2026-06-21"
     },
     {
         "anio":  "2018",
@@ -4985,7 +4985,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  -180000,
         "pct":  -1.7,
-        "fechaVpp":  "2026-06-21 16:32"
+        "fechaVpp":  "2026-06-21"
     },
     {
         "anio":  "2022",
@@ -5000,7 +5000,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  206000,
         "pct":  2.52,
-        "fechaVpp":  "2026-06-20 19:06"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5015,7 +5015,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  -465000,
         "pct":  -6.5,
-        "fechaVpp":  "2026-06-20 18:54"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2024",
@@ -5030,7 +5030,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-20 17:42"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2021",
@@ -5045,7 +5045,7 @@ const DATA = [
         "c2b":  7990000,
         "diff":  -556000,
         "pct":  -6.51,
-        "fechaVpp":  "2026-06-20 16:07"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5060,7 +5060,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  43000,
         "pct":  0.66,
-        "fechaVpp":  "2026-06-20 15:09"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2024",
@@ -5075,7 +5075,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-20 14:51"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2021",
@@ -5090,7 +5090,7 @@ const DATA = [
         "c2b":  9190000,
         "diff":  200000,
         "pct":  2.22,
-        "fechaVpp":  "2026-06-20 14:44"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5105,7 +5105,7 @@ const DATA = [
         "c2b":  4790000,
         "diff":  56000,
         "pct":  1.18,
-        "fechaVpp":  "2026-06-20 14:42"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5120,7 +5120,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -357000,
         "pct":  -5.45,
-        "fechaVpp":  "2026-06-20 14:19"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2012",
@@ -5135,7 +5135,7 @@ const DATA = [
         "c2b":  2590000,
         "diff":  -102000,
         "pct":  -3.79,
-        "fechaVpp":  "2026-06-20 14:11"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2022",
@@ -5150,7 +5150,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  -85000,
         "pct":  -1.42,
-        "fechaVpp":  "2026-06-20 13:56"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2023",
@@ -5165,7 +5165,7 @@ const DATA = [
         "c2b":  16790000,
         "diff":  -130000,
         "pct":  -0.77,
-        "fechaVpp":  "2026-06-20 13:40"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2016",
@@ -5180,7 +5180,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-20 12:43"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2023",
@@ -5195,7 +5195,7 @@ const DATA = [
         "c2b":  18390000,
         "diff":  -871000,
         "pct":  -4.52,
-        "fechaVpp":  "2026-06-20 12:42"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5210,7 +5210,7 @@ const DATA = [
         "c2b":  5490000,
         "diff":  -381000,
         "pct":  -6.49,
-        "fechaVpp":  "2026-06-20 12:15"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2024",
@@ -5225,7 +5225,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-20 12:05"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2017",
@@ -5240,7 +5240,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  1395000,
         "pct":  13.04,
-        "fechaVpp":  "2026-06-20 11:56"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2020",
@@ -5255,7 +5255,7 @@ const DATA = [
         "c2b":  13590000,
         "diff":  1973000,
         "pct":  16.98,
-        "fechaVpp":  "2026-06-20 11:52"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2021",
@@ -5270,7 +5270,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  280000,
         "pct":  4.66,
-        "fechaVpp":  "2026-06-20 11:46"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2016",
@@ -5285,7 +5285,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  -93000,
         "pct":  -1.26,
-        "fechaVpp":  "2026-06-20 11:42"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2022",
@@ -5300,7 +5300,7 @@ const DATA = [
         "c2b":  8090000,
         "diff":  -173000,
         "pct":  -2.09,
-        "fechaVpp":  "2026-06-20 11:36"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2016",
@@ -5315,7 +5315,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -233000,
         "pct":  -4.14,
-        "fechaVpp":  "2026-06-20 11:27"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2018",
@@ -5330,7 +5330,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  29000,
         "pct":  0.35,
-        "fechaVpp":  "2026-06-20 11:26"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2021",
@@ -5345,7 +5345,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  822000,
         "pct":  9.27,
-        "fechaVpp":  "2026-06-20 11:14"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2021",
@@ -5360,7 +5360,7 @@ const DATA = [
         "c2b":  14890000,
         "diff":  211000,
         "pct":  1.44,
-        "fechaVpp":  "2026-06-20 11:12"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2017",
@@ -5375,7 +5375,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -241000,
         "pct":  -2.31,
-        "fechaVpp":  "2026-06-20 10:45"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2024",
@@ -5390,7 +5390,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-20 10:38"
+        "fechaVpp":  "2026-06-20"
     },
     {
         "anio":  "2016",
@@ -5405,7 +5405,7 @@ const DATA = [
         "c2b":  9190000,
         "diff":  -1101000,
         "pct":  -10.7,
-        "fechaVpp":  "2026-06-19 17:56"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2017",
@@ -5420,7 +5420,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -211000,
         "pct":  -3.4,
-        "fechaVpp":  "2026-06-19 17:25"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2017",
@@ -5435,7 +5435,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  16000,
         "pct":  0.28,
-        "fechaVpp":  "2026-06-19 17:19"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2021",
@@ -5450,7 +5450,7 @@ const DATA = [
         "c2b":  20090000,
         "diff":  1425000,
         "pct":  7.63,
-        "fechaVpp":  "2026-06-19 17:17"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2024",
@@ -5465,7 +5465,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-19 17:04"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2020",
@@ -5480,7 +5480,7 @@ const DATA = [
         "c2b":  12290000,
         "diff":  -727000,
         "pct":  -5.59,
-        "fechaVpp":  "2026-06-19 16:43"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2020",
@@ -5495,7 +5495,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -214000,
         "pct":  -3.82,
-        "fechaVpp":  "2026-06-19 16:41"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2023",
@@ -5510,7 +5510,7 @@ const DATA = [
         "c2b":  23490000,
         "diff":  -23000,
         "pct":  -0.1,
-        "fechaVpp":  "2026-06-19 16:24"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2017",
@@ -5525,7 +5525,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  840000,
         "pct":  8.53,
-        "fechaVpp":  "2026-06-19 16:15"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2022",
@@ -5540,7 +5540,7 @@ const DATA = [
         "c2b":  9590000,
         "diff":  -481000,
         "pct":  -4.78,
-        "fechaVpp":  "2026-06-19 16:13"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2020",
@@ -5555,7 +5555,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  207000,
         "pct":  3.99,
-        "fechaVpp":  "2026-06-19 15:38"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2013",
@@ -5570,7 +5570,7 @@ const DATA = [
         "c2b":  2690000,
         "diff":  -152000,
         "pct":  -5.35,
-        "fechaVpp":  "2026-06-19 15:21"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2023",
@@ -5585,7 +5585,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  195000,
         "pct":  3,
-        "fechaVpp":  "2026-06-19 14:17"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2021",
@@ -5600,7 +5600,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  -131000,
         "pct":  -1.36,
-        "fechaVpp":  "2026-06-19 13:43"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2017",
@@ -5615,7 +5615,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  678000,
         "pct":  10.91,
-        "fechaVpp":  "2026-06-19 13:40"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2024",
@@ -5630,7 +5630,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-19 12:49"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2024",
@@ -5645,7 +5645,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-19 12:47"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2019",
@@ -5660,7 +5660,7 @@ const DATA = [
         "c2b":  11190000,
         "diff":  -367000,
         "pct":  -3.18,
-        "fechaVpp":  "2026-06-19 11:24"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2021",
@@ -5675,7 +5675,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  -101000,
         "pct":  -0.94,
-        "fechaVpp":  "2026-06-19 11:23"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2015",
@@ -5690,7 +5690,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  398000,
         "pct":  5.77,
-        "fechaVpp":  "2026-06-19 09:28"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2022",
@@ -5705,7 +5705,7 @@ const DATA = [
         "c2b":  16990000,
         "diff":  -288000,
         "pct":  -1.67,
-        "fechaVpp":  "2026-06-19 09:21"
+        "fechaVpp":  "2026-06-19"
     },
     {
         "anio":  "2024",
@@ -5720,7 +5720,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-18 18:28"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2022",
@@ -5735,7 +5735,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  336000,
         "pct":  3.71,
-        "fechaVpp":  "2026-06-18 17:57"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -5750,7 +5750,7 @@ const DATA = [
         "c2b":  18590000,
         "diff":  1663000,
         "pct":  9.82,
-        "fechaVpp":  "2026-06-18 17:34"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2021",
@@ -5765,7 +5765,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  -218000,
         "pct":  -3.2,
-        "fechaVpp":  "2026-06-18 17:03"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2019",
@@ -5780,7 +5780,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  -139000,
         "pct":  -2.16,
-        "fechaVpp":  "2026-06-18 16:29"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2015",
@@ -5795,7 +5795,7 @@ const DATA = [
         "c2b":  4690000,
         "diff":  -252000,
         "pct":  -5.1,
-        "fechaVpp":  "2026-06-18 16:23"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -5810,7 +5810,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -168000,
         "pct":  -1.62,
-        "fechaVpp":  "2026-06-18 16:21"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2020",
@@ -5825,7 +5825,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  -360000,
         "pct":  -2.94,
-        "fechaVpp":  "2026-06-18 15:19"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -5840,7 +5840,7 @@ const DATA = [
         "c2b":  19590000,
         "diff":  -92000,
         "pct":  -0.47,
-        "fechaVpp":  "2026-06-18 15:12"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -5855,7 +5855,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -377000,
         "pct":  -3.74,
-        "fechaVpp":  "2026-06-18 13:28"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2018",
@@ -5870,7 +5870,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  1348000,
         "pct":  17.64,
-        "fechaVpp":  "2026-06-18 13:25"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2022",
@@ -5885,7 +5885,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  273000,
         "pct":  4.78,
-        "fechaVpp":  "2026-06-18 13:08"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -5900,7 +5900,7 @@ const DATA = [
         "c2b":  15090000,
         "diff":  463000,
         "pct":  3.17,
-        "fechaVpp":  "2026-06-18 13:04"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2021",
@@ -5915,7 +5915,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  -577000,
         "pct":  -5.73,
-        "fechaVpp":  "2026-06-18 12:54"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2020",
@@ -5930,7 +5930,7 @@ const DATA = [
         "c2b":  12490000,
         "diff":  25000,
         "pct":  0.2,
-        "fechaVpp":  "2026-06-18 12:00"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2022",
@@ -5945,7 +5945,7 @@ const DATA = [
         "c2b":  10490000,
         "diff":  239000,
         "pct":  2.33,
-        "fechaVpp":  "2026-06-18 11:31"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2022",
@@ -5960,7 +5960,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  -375000,
         "pct":  -2.25,
-        "fechaVpp":  "2026-06-18 10:38"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2020",
@@ -5975,7 +5975,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -254000,
         "pct":  -3.94,
-        "fechaVpp":  "2026-06-18 10:16"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2021",
@@ -5990,7 +5990,7 @@ const DATA = [
         "c2b":  8290000,
         "diff":  1623000,
         "pct":  24.34,
-        "fechaVpp":  "2026-06-18 10:14"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2023",
@@ -6005,7 +6005,7 @@ const DATA = [
         "c2b":  21990000,
         "diff":  -478000,
         "pct":  -2.13,
-        "fechaVpp":  "2026-06-18 09:02"
+        "fechaVpp":  "2026-06-18"
     },
     {
         "anio":  "2017",
@@ -6020,7 +6020,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  -63000,
         "pct":  -0.92,
-        "fechaVpp":  "2026-06-17 18:34"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2020",
@@ -6035,7 +6035,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  -125000,
         "pct":  -2.11,
-        "fechaVpp":  "2026-06-17 18:20"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6050,7 +6050,7 @@ const DATA = [
         "c2b":  6990000,
         "diff":  -200000,
         "pct":  -2.78,
-        "fechaVpp":  "2026-06-17 17:34"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2016",
@@ -6065,7 +6065,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  -736000,
         "pct":  -7.65,
-        "fechaVpp":  "2026-06-17 17:31"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6080,7 +6080,7 @@ const DATA = [
         "c2b":  11190000,
         "diff":  110000,
         "pct":  0.99,
-        "fechaVpp":  "2026-06-17 16:43"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2011",
@@ -6095,7 +6095,7 @@ const DATA = [
         "c2b":  4790000,
         "diff":  598000,
         "pct":  14.27,
-        "fechaVpp":  "2026-06-17 16:23"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6110,7 +6110,7 @@ const DATA = [
         "c2b":  16990000,
         "diff":  -641000,
         "pct":  -3.64,
-        "fechaVpp":  "2026-06-17 15:55"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2024",
@@ -6125,7 +6125,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-17 15:51"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2016",
@@ -6140,7 +6140,7 @@ const DATA = [
         "c2b":  9590000,
         "diff":  63000,
         "pct":  0.66,
-        "fechaVpp":  "2026-06-17 14:41"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2023",
@@ -6155,7 +6155,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  -951000,
         "pct":  -8.03,
-        "fechaVpp":  "2026-06-17 13:20"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6170,7 +6170,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  114000,
         "pct":  1.61,
-        "fechaVpp":  "2026-06-17 13:15"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2021",
@@ -6185,7 +6185,7 @@ const DATA = [
         "c2b":  9790000,
         "diff":  346000,
         "pct":  3.66,
-        "fechaVpp":  "2026-06-17 12:48"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2012",
@@ -6200,7 +6200,7 @@ const DATA = [
         "c2b":  2490000,
         "diff":  98000,
         "pct":  4.1,
-        "fechaVpp":  "2026-06-17 12:40"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2024",
@@ -6215,7 +6215,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-17 12:00"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2019",
@@ -6230,7 +6230,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  192000,
         "pct":  1.94,
-        "fechaVpp":  "2026-06-17 11:59"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2024",
@@ -6245,7 +6245,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-17 11:43"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2024",
@@ -6260,7 +6260,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-17 11:35"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6275,7 +6275,7 @@ const DATA = [
         "c2b":  11690000,
         "diff":  322000,
         "pct":  2.83,
-        "fechaVpp":  "2026-06-17 11:35"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2019",
@@ -6290,7 +6290,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -538000,
         "pct":  -4.83,
-        "fechaVpp":  "2026-06-17 11:35"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6305,7 +6305,7 @@ const DATA = [
         "c2b":  16090000,
         "diff":  -191000,
         "pct":  -1.17,
-        "fechaVpp":  "2026-06-17 11:09"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2020",
@@ -6320,7 +6320,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -641000,
         "pct":  -8.29,
-        "fechaVpp":  "2026-06-17 10:57"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6335,7 +6335,7 @@ const DATA = [
         "c2b":  13690000,
         "diff":  407000,
         "pct":  3.06,
-        "fechaVpp":  "2026-06-17 10:40"
+        "fechaVpp":  "2026-06-17"
     },
     {
         "anio":  "2022",
@@ -6350,7 +6350,7 @@ const DATA = [
         "c2b":  7890000,
         "diff":  -285000,
         "pct":  -3.49,
-        "fechaVpp":  "2026-06-16 22:07"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2020",
@@ -6365,7 +6365,7 @@ const DATA = [
         "c2b":  11890000,
         "diff":  -235000,
         "pct":  -1.94,
-        "fechaVpp":  "2026-06-16 19:22"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2021",
@@ -6380,7 +6380,7 @@ const DATA = [
         "c2b":  12590000,
         "diff":  -53000,
         "pct":  -0.42,
-        "fechaVpp":  "2026-06-16 18:22"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2024",
@@ -6395,7 +6395,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-16 18:01"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2020",
@@ -6410,7 +6410,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  -118000,
         "pct":  -1.34,
-        "fechaVpp":  "2026-06-16 17:54"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2017",
@@ -6425,7 +6425,7 @@ const DATA = [
         "c2b":  13490000,
         "diff":  -887000,
         "pct":  -6.17,
-        "fechaVpp":  "2026-06-16 17:21"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2012",
@@ -6440,7 +6440,7 @@ const DATA = [
         "c2b":  5890000,
         "diff":  273000,
         "pct":  4.86,
-        "fechaVpp":  "2026-06-16 16:03"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2023",
@@ -6455,7 +6455,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  -154000,
         "pct":  -1.8,
-        "fechaVpp":  "2026-06-16 16:00"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2024",
@@ -6470,7 +6470,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-16 14:55"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2020",
@@ -6485,7 +6485,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  -184000,
         "pct":  -2.5,
-        "fechaVpp":  "2026-06-16 13:12"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2018",
@@ -6500,7 +6500,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -710000,
         "pct":  -6.28,
-        "fechaVpp":  "2026-06-16 13:01"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2018",
@@ -6515,7 +6515,7 @@ const DATA = [
         "c2b":  7790000,
         "diff":  448000,
         "pct":  6.1,
-        "fechaVpp":  "2026-06-16 12:12"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2022",
@@ -6530,7 +6530,7 @@ const DATA = [
         "c2b":  9190000,
         "diff":  316000,
         "pct":  3.56,
-        "fechaVpp":  "2026-06-16 12:03"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2016",
@@ -6545,7 +6545,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  1548000,
         "pct":  21.08,
-        "fechaVpp":  "2026-06-16 11:29"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2021",
@@ -6560,7 +6560,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  65000,
         "pct":  1.06,
-        "fechaVpp":  "2026-06-16 11:24"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2023",
@@ -6575,7 +6575,7 @@ const DATA = [
         "c2b":  12490000,
         "diff":  -317000,
         "pct":  -2.48,
-        "fechaVpp":  "2026-06-16 11:16"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2020",
@@ -6590,7 +6590,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  515000,
         "pct":  8.62,
-        "fechaVpp":  "2026-06-16 10:43"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2023",
@@ -6605,7 +6605,7 @@ const DATA = [
         "c2b":  11990000,
         "diff":  115000,
         "pct":  0.97,
-        "fechaVpp":  "2026-06-16 10:42"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2018",
@@ -6620,7 +6620,7 @@ const DATA = [
         "c2b":  5090000,
         "diff":  -391000,
         "pct":  -7.13,
-        "fechaVpp":  "2026-06-16 09:17"
+        "fechaVpp":  "2026-06-16"
     },
     {
         "anio":  "2023",
@@ -6635,7 +6635,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  51000,
         "pct":  0.46,
-        "fechaVpp":  "2026-06-15 19:17"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2019",
@@ -6650,7 +6650,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  -86000,
         "pct":  -1.23,
-        "fechaVpp":  "2026-06-15 17:58"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2022",
@@ -6665,7 +6665,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -371000,
         "pct":  -5.65,
-        "fechaVpp":  "2026-06-15 17:24"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2021",
@@ -6680,7 +6680,7 @@ const DATA = [
         "c2b":  15490000,
         "diff":  -411000,
         "pct":  -2.58,
-        "fechaVpp":  "2026-06-15 16:35"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2016",
@@ -6695,7 +6695,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  123000,
         "pct":  2.88,
-        "fechaVpp":  "2026-06-15 16:12"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2018",
@@ -6710,7 +6710,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  -1039000,
         "pct":  -9.09,
-        "fechaVpp":  "2026-06-15 16:06"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2015",
@@ -6725,7 +6725,7 @@ const DATA = [
         "c2b":  2590000,
         "diff":  348000,
         "pct":  15.52,
-        "fechaVpp":  "2026-06-15 15:18"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2022",
@@ -6740,7 +6740,7 @@ const DATA = [
         "c2b":  6390000,
         "diff":  92000,
         "pct":  1.46,
-        "fechaVpp":  "2026-06-15 14:59"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2020",
@@ -6755,7 +6755,7 @@ const DATA = [
         "c2b":  7990000,
         "diff":  238000,
         "pct":  3.07,
-        "fechaVpp":  "2026-06-15 14:18"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2017",
@@ -6770,7 +6770,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  848000,
         "pct":  19.53,
-        "fechaVpp":  "2026-06-15 14:04"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2024",
@@ -6785,7 +6785,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-15 13:59"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2019",
@@ -6800,7 +6800,7 @@ const DATA = [
         "c2b":  9990000,
         "diff":  9000,
         "pct":  0.09,
-        "fechaVpp":  "2026-06-15 13:58"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2023",
@@ -6815,7 +6815,7 @@ const DATA = [
         "c2b":  11190000,
         "diff":  419000,
         "pct":  3.89,
-        "fechaVpp":  "2026-06-15 12:45"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2024",
@@ -6830,7 +6830,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-15 12:45"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2023",
@@ -6845,7 +6845,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -238000,
         "pct":  -3.82,
-        "fechaVpp":  "2026-06-15 12:41"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2021",
@@ -6860,7 +6860,7 @@ const DATA = [
         "c2b":  11690000,
         "diff":  437000,
         "pct":  3.88,
-        "fechaVpp":  "2026-06-15 12:30"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2024",
@@ -6875,7 +6875,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-15 11:23"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2023",
@@ -6890,7 +6890,7 @@ const DATA = [
         "c2b":  11490000,
         "diff":  175000,
         "pct":  1.55,
-        "fechaVpp":  "2026-06-15 11:08"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2022",
@@ -6905,7 +6905,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  173000,
         "pct":  2.65,
-        "fechaVpp":  "2026-06-15 10:27"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2023",
@@ -6920,7 +6920,7 @@ const DATA = [
         "c2b":  16890000,
         "diff":  -386000,
         "pct":  -2.23,
-        "fechaVpp":  "2026-06-15 10:18"
+        "fechaVpp":  "2026-06-15"
     },
     {
         "anio":  "2019",
@@ -6935,7 +6935,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -489000,
         "pct":  -7.55,
-        "fechaVpp":  "2026-06-14 17:36"
+        "fechaVpp":  "2026-06-14"
     },
     {
         "anio":  "2017",
@@ -6950,7 +6950,7 @@ const DATA = [
         "c2b":  8190000,
         "diff":  109000,
         "pct":  1.35,
-        "fechaVpp":  "2026-06-14 16:12"
+        "fechaVpp":  "2026-06-14"
     },
     {
         "anio":  "2022",
@@ -6965,7 +6965,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  358000,
         "pct":  3.4,
-        "fechaVpp":  "2026-06-14 12:59"
+        "fechaVpp":  "2026-06-14"
     },
     {
         "anio":  "2019",
@@ -6980,7 +6980,7 @@ const DATA = [
         "c2b":  8590000,
         "diff":  44000,
         "pct":  0.51,
-        "fechaVpp":  "2026-06-13 17:37"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2018",
@@ -6995,7 +6995,7 @@ const DATA = [
         "c2b":  6390000,
         "diff":  -261000,
         "pct":  -3.92,
-        "fechaVpp":  "2026-06-13 14:11"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2016",
@@ -7010,7 +7010,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  1898000,
         "pct":  28.79,
-        "fechaVpp":  "2026-06-13 14:05"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2019",
@@ -7025,7 +7025,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -63000,
         "pct":  -1.01,
-        "fechaVpp":  "2026-06-13 13:47"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2023",
@@ -7040,7 +7040,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  1000,
         "pct":  0.01,
-        "fechaVpp":  "2026-06-13 13:41"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2023",
@@ -7055,7 +7055,7 @@ const DATA = [
         "c2b":  10990000,
         "diff":  545000,
         "pct":  5.22,
-        "fechaVpp":  "2026-06-13 13:23"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2018",
@@ -7070,7 +7070,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  31000,
         "pct":  0.31,
-        "fechaVpp":  "2026-06-13 13:02"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2016",
@@ -7085,7 +7085,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  692000,
         "pct":  12.59,
-        "fechaVpp":  "2026-06-13 12:59"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2015",
@@ -7100,7 +7100,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  -102000,
         "pct":  -2.27,
-        "fechaVpp":  "2026-06-13 12:57"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2023",
@@ -7115,7 +7115,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -168000,
         "pct":  -1.62,
-        "fechaVpp":  "2026-06-13 12:48"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2023",
@@ -7130,7 +7130,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  -75000,
         "pct":  -0.67,
-        "fechaVpp":  "2026-06-13 12:18"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2012",
@@ -7145,7 +7145,7 @@ const DATA = [
         "c2b":  3090000,
         "diff":  -277000,
         "pct":  -8.23,
-        "fechaVpp":  "2026-06-13 11:46"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2020",
@@ -7160,7 +7160,7 @@ const DATA = [
         "c2b":  9990000,
         "diff":  1373000,
         "pct":  15.93,
-        "fechaVpp":  "2026-06-13 11:41"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2018",
@@ -7175,7 +7175,7 @@ const DATA = [
         "c2b":  5290000,
         "diff":  19000,
         "pct":  0.36,
-        "fechaVpp":  "2026-06-13 11:39"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2022",
@@ -7190,7 +7190,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  -203000,
         "pct":  -1.23,
-        "fechaVpp":  "2026-06-13 10:46"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2020",
@@ -7205,7 +7205,7 @@ const DATA = [
         "c2b":  12490000,
         "diff":  -1032000,
         "pct":  -7.63,
-        "fechaVpp":  "2026-06-13 10:15"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2020",
@@ -7220,7 +7220,7 @@ const DATA = [
         "c2b":  13090000,
         "diff":  -535000,
         "pct":  -3.93,
-        "fechaVpp":  "2026-06-13 10:11"
+        "fechaVpp":  "2026-06-13"
     },
     {
         "anio":  "2022",
@@ -7235,7 +7235,7 @@ const DATA = [
         "c2b":  9290000,
         "diff":  -395000,
         "pct":  -4.08,
-        "fechaVpp":  "2026-06-12 20:23"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2022",
@@ -7250,7 +7250,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  79000,
         "pct":  0.77,
-        "fechaVpp":  "2026-06-12 18:05"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2024",
@@ -7265,7 +7265,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-12 17:07"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2016",
@@ -7280,7 +7280,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -200000,
         "pct":  -3.58,
-        "fechaVpp":  "2026-06-12 17:01"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2021",
@@ -7295,7 +7295,7 @@ const DATA = [
         "c2b":  13990000,
         "diff":  278000,
         "pct":  2.03,
-        "fechaVpp":  "2026-06-12 16:18"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2023",
@@ -7310,7 +7310,7 @@ const DATA = [
         "c2b":  7590000,
         "diff":  -74000,
         "pct":  -0.97,
-        "fechaVpp":  "2026-06-12 16:15"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2022",
@@ -7325,7 +7325,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  184000,
         "pct":  2.79,
-        "fechaVpp":  "2026-06-12 16:09"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2018",
@@ -7340,7 +7340,7 @@ const DATA = [
         "c2b":  7790000,
         "diff":  -101000,
         "pct":  -1.28,
-        "fechaVpp":  "2026-06-12 15:02"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2015",
@@ -7355,7 +7355,7 @@ const DATA = [
         "c2b":  5490000,
         "diff":  -277000,
         "pct":  -4.8,
-        "fechaVpp":  "2026-06-12 13:46"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2022",
@@ -7370,7 +7370,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  -25000,
         "pct":  -0.26,
-        "fechaVpp":  "2026-06-12 13:17"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2023",
@@ -7385,7 +7385,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  122000,
         "pct":  1.28,
-        "fechaVpp":  "2026-06-12 13:02"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2012",
@@ -7400,7 +7400,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  -102000,
         "pct":  -2.27,
-        "fechaVpp":  "2026-06-12 12:55"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2018",
@@ -7415,7 +7415,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  -297000,
         "pct":  -2.86,
-        "fechaVpp":  "2026-06-12 12:53"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2019",
@@ -7430,7 +7430,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  595000,
         "pct":  7.54,
-        "fechaVpp":  "2026-06-12 12:49"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2018",
@@ -7445,7 +7445,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  1173000,
         "pct":  13.15,
-        "fechaVpp":  "2026-06-12 12:16"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2022",
@@ -7460,7 +7460,7 @@ const DATA = [
         "c2b":  9590000,
         "diff":  16000,
         "pct":  0.17,
-        "fechaVpp":  "2026-06-12 11:19"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2021",
@@ -7475,7 +7475,7 @@ const DATA = [
         "c2b":  14890000,
         "diff":  211000,
         "pct":  1.44,
-        "fechaVpp":  "2026-06-12 11:19"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2022",
@@ -7490,7 +7490,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -191000,
         "pct":  -2.99,
-        "fechaVpp":  "2026-06-12 11:08"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2019",
@@ -7505,7 +7505,7 @@ const DATA = [
         "c2b":  13990000,
         "diff":  430000,
         "pct":  3.17,
-        "fechaVpp":  "2026-06-12 10:53"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2024",
@@ -7520,7 +7520,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-12 09:33"
+        "fechaVpp":  "2026-06-12"
     },
     {
         "anio":  "2019",
@@ -7535,7 +7535,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  94000,
         "pct":  1.47,
-        "fechaVpp":  "2026-06-11 20:00"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2017",
@@ -7550,7 +7550,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  -597000,
         "pct":  -9.35,
-        "fechaVpp":  "2026-06-11 19:04"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2018",
@@ -7565,7 +7565,7 @@ const DATA = [
         "c2b":  5790000,
         "diff":  -565000,
         "pct":  -8.89,
-        "fechaVpp":  "2026-06-11 17:37"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2019",
@@ -7580,7 +7580,7 @@ const DATA = [
         "c2b":  10390000,
         "diff":  497000,
         "pct":  5.02,
-        "fechaVpp":  "2026-06-11 17:18"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2020",
@@ -7595,7 +7595,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  195000,
         "pct":  3.36,
-        "fechaVpp":  "2026-06-11 17:03"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2024",
@@ -7610,7 +7610,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-11 16:41"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2017",
@@ -7625,7 +7625,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  1498000,
         "pct":  17.23,
-        "fechaVpp":  "2026-06-11 16:25"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2021",
@@ -7640,7 +7640,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  -181000,
         "pct":  -2.8,
-        "fechaVpp":  "2026-06-11 15:43"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2023",
@@ -7655,7 +7655,7 @@ const DATA = [
         "c2b":  9790000,
         "diff":  382000,
         "pct":  4.06,
-        "fechaVpp":  "2026-06-11 15:01"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2017",
@@ -7670,7 +7670,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  -294000,
         "pct":  -2.58,
-        "fechaVpp":  "2026-06-11 14:55"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2024",
@@ -7685,7 +7685,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-11 14:44"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2023",
@@ -7700,7 +7700,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -16000,
         "pct":  -0.16,
-        "fechaVpp":  "2026-06-11 14:37"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2016",
@@ -7715,7 +7715,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  -145000,
         "pct":  -1.7,
-        "fechaVpp":  "2026-06-11 14:22"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2022",
@@ -7730,7 +7730,7 @@ const DATA = [
         "c2b":  7090000,
         "diff":  -371000,
         "pct":  -4.97,
-        "fechaVpp":  "2026-06-11 14:21"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2022",
@@ -7745,7 +7745,7 @@ const DATA = [
         "c2b":  8090000,
         "diff":  -173000,
         "pct":  -2.09,
-        "fechaVpp":  "2026-06-11 14:07"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2023",
@@ -7760,7 +7760,7 @@ const DATA = [
         "c2b":  6290000,
         "diff":  -61000,
         "pct":  -0.96,
-        "fechaVpp":  "2026-06-11 12:22"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2019",
@@ -7775,7 +7775,7 @@ const DATA = [
         "c2b":  3590000,
         "diff":  214000,
         "pct":  6.34,
-        "fechaVpp":  "2026-06-11 10:19"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2019",
@@ -7790,7 +7790,7 @@ const DATA = [
         "c2b":  8090000,
         "diff":  -7000,
         "pct":  -0.09,
-        "fechaVpp":  "2026-06-11 10:19"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2021",
@@ -7805,7 +7805,7 @@ const DATA = [
         "c2b":  4290000,
         "diff":  66000,
         "pct":  1.56,
-        "fechaVpp":  "2026-06-11 10:14"
+        "fechaVpp":  "2026-06-11"
     },
     {
         "anio":  "2023",
@@ -7820,7 +7820,7 @@ const DATA = [
         "c2b":  23490000,
         "diff":  215000,
         "pct":  0.92,
-        "fechaVpp":  "2026-06-10 18:15"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2020",
@@ -7835,7 +7835,7 @@ const DATA = [
         "c2b":  12190000,
         "diff":  3106000,
         "pct":  34.19,
-        "fechaVpp":  "2026-06-10 17:55"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2019",
@@ -7850,7 +7850,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -348000,
         "pct":  -3.47,
-        "fechaVpp":  "2026-06-10 17:04"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2023",
@@ -7865,7 +7865,7 @@ const DATA = [
         "c2b":  11090000,
         "diff":  155000,
         "pct":  1.42,
-        "fechaVpp":  "2026-06-10 16:25"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2018",
@@ -7880,7 +7880,7 @@ const DATA = [
         "c2b":  11490000,
         "diff":  -262000,
         "pct":  -2.23,
-        "fechaVpp":  "2026-06-10 16:03"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2020",
@@ -7895,7 +7895,7 @@ const DATA = [
         "c2b":  14890000,
         "diff":  2598000,
         "pct":  21.14,
-        "fechaVpp":  "2026-06-10 15:28"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2020",
@@ -7910,7 +7910,7 @@ const DATA = [
         "c2b":  13090000,
         "diff":  4000,
         "pct":  0.03,
-        "fechaVpp":  "2026-06-10 15:09"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2020",
@@ -7925,7 +7925,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -61000,
         "pct":  -0.6,
-        "fechaVpp":  "2026-06-10 14:43"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2019",
@@ -7940,7 +7940,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  -18000,
         "pct":  -0.15,
-        "fechaVpp":  "2026-06-10 13:19"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2021",
@@ -7955,7 +7955,7 @@ const DATA = [
         "c2b":  14290000,
         "diff":  -641000,
         "pct":  -4.29,
-        "fechaVpp":  "2026-06-10 12:50"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2016",
@@ -7970,7 +7970,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  -2317000,
         "pct":  -20.67,
-        "fechaVpp":  "2026-06-10 12:23"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2022",
@@ -7985,7 +7985,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  -294000,
         "pct":  -2.89,
-        "fechaVpp":  "2026-06-10 12:22"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2024",
@@ -8000,7 +8000,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-10 11:21"
+        "fechaVpp":  "2026-06-10"
     },
     {
         "anio":  "2018",
@@ -8015,7 +8015,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  103000,
         "pct":  1.05,
-        "fechaVpp":  "2026-06-09 18:22"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2017",
@@ -8030,7 +8030,7 @@ const DATA = [
         "c2b":  6490000,
         "diff":  -500000,
         "pct":  -7.15,
-        "fechaVpp":  "2026-06-09 17:43"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2023",
@@ -8045,7 +8045,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  22000,
         "pct":  0.23,
-        "fechaVpp":  "2026-06-09 17:36"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2023",
@@ -8060,7 +8060,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  -281000,
         "pct":  -2.91,
-        "fechaVpp":  "2026-06-09 16:53"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2022",
@@ -8075,7 +8075,7 @@ const DATA = [
         "c2b":  13290000,
         "diff":  -6000,
         "pct":  -0.05,
-        "fechaVpp":  "2026-06-09 16:28"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2024",
@@ -8090,7 +8090,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-09 14:29"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2021",
@@ -8105,7 +8105,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  -912000,
         "pct":  -7.86,
-        "fechaVpp":  "2026-06-09 13:45"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2024",
@@ -8120,7 +8120,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-09 12:39"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2020",
@@ -8135,7 +8135,7 @@ const DATA = [
         "c2b":  7890000,
         "diff":  131000,
         "pct":  1.69,
-        "fechaVpp":  "2026-06-09 12:09"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2024",
@@ -8150,7 +8150,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-09 12:09"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2024",
@@ -8165,7 +8165,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-09 11:39"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2021",
@@ -8180,7 +8180,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  -60000,
         "pct":  -0.55,
-        "fechaVpp":  "2026-06-09 09:40"
+        "fechaVpp":  "2026-06-09"
     },
     {
         "anio":  "2024",
@@ -8195,7 +8195,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-08 18:50"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2020",
@@ -8210,7 +8210,7 @@ const DATA = [
         "c2b":  13490000,
         "diff":  928000,
         "pct":  7.39,
-        "fechaVpp":  "2026-06-08 17:07"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2020",
@@ -8225,7 +8225,7 @@ const DATA = [
         "c2b":  11390000,
         "diff":  754000,
         "pct":  7.09,
-        "fechaVpp":  "2026-06-08 16:52"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2024",
@@ -8240,7 +8240,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-08 16:23"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2023",
@@ -8255,7 +8255,7 @@ const DATA = [
         "c2b":  12290000,
         "diff":  -159000,
         "pct":  -1.28,
-        "fechaVpp":  "2026-06-08 15:54"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2022",
@@ -8270,7 +8270,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  146000,
         "pct":  2.2,
-        "fechaVpp":  "2026-06-08 14:46"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2017",
@@ -8285,7 +8285,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  973000,
         "pct":  11.16,
-        "fechaVpp":  "2026-06-08 13:31"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2024",
@@ -8300,7 +8300,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-08 13:05"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2019",
@@ -8315,7 +8315,7 @@ const DATA = [
         "c2b":  4390000,
         "diff":  -452000,
         "pct":  -9.33,
-        "fechaVpp":  "2026-06-08 11:16"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2017",
@@ -8330,7 +8330,7 @@ const DATA = [
         "c2b":  4290000,
         "diff":  -64000,
         "pct":  -1.47,
-        "fechaVpp":  "2026-06-08 10:25"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2018",
@@ -8345,7 +8345,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  1031000,
         "pct":  12.19,
-        "fechaVpp":  "2026-06-08 10:09"
+        "fechaVpp":  "2026-06-08"
     },
     {
         "anio":  "2017",
@@ -8360,7 +8360,7 @@ const DATA = [
         "c2b":  10590000,
         "diff":  -490000,
         "pct":  -4.42,
-        "fechaVpp":  "2026-06-07 22:26"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2021",
@@ -8375,7 +8375,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  -296000,
         "pct":  -2.91,
-        "fechaVpp":  "2026-06-07 17:11"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2020",
@@ -8390,7 +8390,7 @@ const DATA = [
         "c2b":  8490000,
         "diff":  385000,
         "pct":  4.75,
-        "fechaVpp":  "2026-06-07 15:51"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2022",
@@ -8405,7 +8405,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  -446000,
         "pct":  -4.83,
-        "fechaVpp":  "2026-06-07 14:03"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2024",
@@ -8420,7 +8420,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-07 12:24"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2024",
@@ -8435,7 +8435,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-07 12:11"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2018",
@@ -8450,7 +8450,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  397000,
         "pct":  4.27,
-        "fechaVpp":  "2026-06-07 11:20"
+        "fechaVpp":  "2026-06-07"
     },
     {
         "anio":  "2022",
@@ -8465,7 +8465,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-06 17:54"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2023",
@@ -8480,7 +8480,7 @@ const DATA = [
         "c2b":  9490000,
         "diff":  254000,
         "pct":  2.75,
-        "fechaVpp":  "2026-06-06 17:42"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2024",
@@ -8495,7 +8495,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-06 16:28"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2019",
@@ -8510,7 +8510,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  -534000,
         "pct":  -9.33,
-        "fechaVpp":  "2026-06-06 16:09"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2022",
@@ -8525,7 +8525,7 @@ const DATA = [
         "c2b":  12390000,
         "diff":  -125000,
         "pct":  -1,
-        "fechaVpp":  "2026-06-06 15:04"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2018",
@@ -8540,7 +8540,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  -205000,
         "pct":  -2.3,
-        "fechaVpp":  "2026-06-06 14:52"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2023",
@@ -8555,7 +8555,7 @@ const DATA = [
         "c2b":  10290000,
         "diff":  -88000,
         "pct":  -0.85,
-        "fechaVpp":  "2026-06-06 14:10"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2015",
@@ -8570,7 +8570,7 @@ const DATA = [
         "c2b":  6790000,
         "diff":  -398000,
         "pct":  -5.54,
-        "fechaVpp":  "2026-06-06 13:15"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2019",
@@ -8585,7 +8585,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  1239000,
         "pct":  21.93,
-        "fechaVpp":  "2026-06-06 13:03"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2016",
@@ -8600,7 +8600,7 @@ const DATA = [
         "c2b":  6190000,
         "diff":  -534000,
         "pct":  -7.94,
-        "fechaVpp":  "2026-06-06 12:20"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2019",
@@ -8615,7 +8615,7 @@ const DATA = [
         "c2b":  6990000,
         "diff":  -86000,
         "pct":  -1.22,
-        "fechaVpp":  "2026-06-06 11:57"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2019",
@@ -8630,7 +8630,7 @@ const DATA = [
         "c2b":  5290000,
         "diff":  764000,
         "pct":  16.88,
-        "fechaVpp":  "2026-06-06 11:53"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2021",
@@ -8645,7 +8645,7 @@ const DATA = [
         "c2b":  7990000,
         "diff":  -198000,
         "pct":  -2.42,
-        "fechaVpp":  "2026-06-06 11:39"
+        "fechaVpp":  "2026-06-06"
     },
     {
         "anio":  "2017",
@@ -8660,7 +8660,7 @@ const DATA = [
         "c2b":  9390000,
         "diff":  -951000,
         "pct":  -9.2,
-        "fechaVpp":  "2026-06-05 18:36"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2020",
@@ -8675,7 +8675,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-05 17:58"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2023",
@@ -8690,7 +8690,7 @@ const DATA = [
         "c2b":  19390000,
         "diff":  1759000,
         "pct":  9.98,
-        "fechaVpp":  "2026-06-05 17:44"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2015",
@@ -8705,7 +8705,7 @@ const DATA = [
         "c2b":  5190000,
         "diff":  -340000,
         "pct":  -6.15,
-        "fechaVpp":  "2026-06-05 17:38"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2023",
@@ -8720,7 +8720,7 @@ const DATA = [
         "c2b":  7390000,
         "diff":  -31000,
         "pct":  -0.42,
-        "fechaVpp":  "2026-06-05 16:32"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2020",
@@ -8735,7 +8735,7 @@ const DATA = [
         "c2b":  7490000,
         "diff":  2000,
         "pct":  0.03,
-        "fechaVpp":  "2026-06-05 16:11"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2020",
@@ -8750,7 +8750,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  55000,
         "pct":  0.66,
-        "fechaVpp":  "2026-06-05 16:01"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2020",
@@ -8765,7 +8765,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  200000,
         "pct":  2.28,
-        "fechaVpp":  "2026-06-05 15:07"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2022",
@@ -8780,7 +8780,7 @@ const DATA = [
         "c2b":  15090000,
         "diff":  -381000,
         "pct":  -2.46,
-        "fechaVpp":  "2026-06-05 13:24"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2018",
@@ -8795,7 +8795,7 @@ const DATA = [
         "c2b":  21490000,
         "diff":  4002000,
         "pct":  22.88,
-        "fechaVpp":  "2026-06-05 12:37"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2015",
@@ -8810,7 +8810,7 @@ const DATA = [
         "c2b":  3690000,
         "diff":  -14000,
         "pct":  -0.38,
-        "fechaVpp":  "2026-06-05 10:17"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2022",
@@ -8825,7 +8825,7 @@ const DATA = [
         "c2b":  12090000,
         "diff":  -37000,
         "pct":  -0.31,
-        "fechaVpp":  "2026-06-05 10:05"
+        "fechaVpp":  "2026-06-05"
     },
     {
         "anio":  "2017",
@@ -8840,7 +8840,7 @@ const DATA = [
         "c2b":  4690000,
         "diff":  697000,
         "pct":  17.46,
-        "fechaVpp":  "2026-06-04 18:22"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2021",
@@ -8855,7 +8855,7 @@ const DATA = [
         "c2b":  7190000,
         "diff":  29000,
         "pct":  0.4,
-        "fechaVpp":  "2026-06-04 17:06"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2016",
@@ -8870,7 +8870,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  -554000,
         "pct":  -5.87,
-        "fechaVpp":  "2026-06-04 16:49"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2021",
@@ -8885,7 +8885,7 @@ const DATA = [
         "c2b":  10690000,
         "diff":  -213000,
         "pct":  -1.95,
-        "fechaVpp":  "2026-06-04 16:02"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2024",
@@ -8900,7 +8900,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-04 14:38"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2022",
@@ -8915,7 +8915,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  163000,
         "pct":  1.91,
-        "fechaVpp":  "2026-06-04 14:15"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2023",
@@ -8930,7 +8930,7 @@ const DATA = [
         "c2b":  21490000,
         "diff":  -218000,
         "pct":  -1,
-        "fechaVpp":  "2026-06-04 13:25"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2015",
@@ -8945,7 +8945,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  508000,
         "pct":  6.06,
-        "fechaVpp":  "2026-06-04 12:05"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2021",
@@ -8960,7 +8960,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  295000,
         "pct":  3.47,
-        "fechaVpp":  "2026-06-04 12:03"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2021",
@@ -8975,7 +8975,7 @@ const DATA = [
         "c2b":  9190000,
         "diff":  -269000,
         "pct":  -2.84,
-        "fechaVpp":  "2026-06-04 11:04"
+        "fechaVpp":  "2026-06-04"
     },
     {
         "anio":  "2024",
@@ -8990,7 +8990,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-03 20:08"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2021",
@@ -9005,7 +9005,7 @@ const DATA = [
         "c2b":  8690000,
         "diff":  -189000,
         "pct":  -2.13,
-        "fechaVpp":  "2026-06-03 19:24"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2023",
@@ -9020,7 +9020,7 @@ const DATA = [
         "c2b":  11190000,
         "diff":  -550000,
         "pct":  -4.68,
-        "fechaVpp":  "2026-06-03 18:43"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2014",
@@ -9035,7 +9035,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  -380000,
         "pct":  -7.08,
-        "fechaVpp":  "2026-06-03 17:13"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2023",
@@ -9050,7 +9050,7 @@ const DATA = [
         "c2b":  17890000,
         "diff":  525000,
         "pct":  3.02,
-        "fechaVpp":  "2026-06-03 16:59"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2023",
@@ -9065,7 +9065,7 @@ const DATA = [
         "c2b":  8390000,
         "diff":  206000,
         "pct":  2.52,
-        "fechaVpp":  "2026-06-03 15:04"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2021",
@@ -9080,7 +9080,7 @@ const DATA = [
         "c2b":  16090000,
         "diff":  202000,
         "pct":  1.27,
-        "fechaVpp":  "2026-06-03 14:59"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2017",
@@ -9095,7 +9095,7 @@ const DATA = [
         "c2b":  13590000,
         "diff":  527000,
         "pct":  4.03,
-        "fechaVpp":  "2026-06-03 14:25"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2020",
@@ -9110,7 +9110,7 @@ const DATA = [
         "c2b":  6990000,
         "diff":  -165000,
         "pct":  -2.31,
-        "fechaVpp":  "2026-06-03 14:09"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2010",
@@ -9125,7 +9125,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  -77000,
         "pct":  -1.52,
-        "fechaVpp":  "2026-06-03 14:01"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2017",
@@ -9140,7 +9140,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  -168000,
         "pct":  -2.73,
-        "fechaVpp":  "2026-06-03 13:07"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2019",
@@ -9155,7 +9155,7 @@ const DATA = [
         "c2b":  4990000,
         "diff":  -520000,
         "pct":  -9.44,
-        "fechaVpp":  "2026-06-03 13:04"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2024",
@@ -9170,7 +9170,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-03 13:02"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2024",
@@ -9185,7 +9185,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-03 12:40"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2024",
@@ -9200,7 +9200,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-03 12:11"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2017",
@@ -9215,7 +9215,7 @@ const DATA = [
         "c2b":  7890000,
         "diff":  -4000,
         "pct":  -0.05,
-        "fechaVpp":  "2026-06-03 12:10"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2022",
@@ -9230,7 +9230,7 @@ const DATA = [
         "c2b":  9690000,
         "diff":  -78000,
         "pct":  -0.8,
-        "fechaVpp":  "2026-06-03 12:03"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2018",
@@ -9245,7 +9245,7 @@ const DATA = [
         "c2b":  8890000,
         "diff":  835000,
         "pct":  10.37,
-        "fechaVpp":  "2026-06-03 09:56"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2022",
@@ -9260,7 +9260,7 @@ const DATA = [
         "c2b":  13290000,
         "diff":  3133000,
         "pct":  30.85,
-        "fechaVpp":  "2026-06-03 09:36"
+        "fechaVpp":  "2026-06-03"
     },
     {
         "anio":  "2019",
@@ -9275,7 +9275,7 @@ const DATA = [
         "c2b":  12790000,
         "diff":  -187000,
         "pct":  -1.44,
-        "fechaVpp":  "2026-06-02 17:43"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2021",
@@ -9290,7 +9290,7 @@ const DATA = [
         "c2b":  18390000,
         "diff":  -387000,
         "pct":  -2.06,
-        "fechaVpp":  "2026-06-02 17:03"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2021",
@@ -9305,7 +9305,7 @@ const DATA = [
         "c2b":  4290000,
         "diff":  27000,
         "pct":  0.63,
-        "fechaVpp":  "2026-06-02 16:56"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2021",
@@ -9320,7 +9320,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -860000,
         "pct":  -7.78,
-        "fechaVpp":  "2026-06-02 16:44"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2019",
@@ -9335,7 +9335,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  1164000,
         "pct":  19,
-        "fechaVpp":  "2026-06-02 16:40"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2016",
@@ -9350,7 +9350,7 @@ const DATA = [
         "c2b":  5490000,
         "diff":  -45000,
         "pct":  -0.81,
-        "fechaVpp":  "2026-06-02 16:02"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2018",
@@ -9365,7 +9365,7 @@ const DATA = [
         "c2b":  5690000,
         "diff":  -326000,
         "pct":  -5.42,
-        "fechaVpp":  "2026-06-02 15:37"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2016",
@@ -9380,7 +9380,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  -366000,
         "pct":  -3.91,
-        "fechaVpp":  "2026-06-02 15:34"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2018",
@@ -9395,7 +9395,7 @@ const DATA = [
         "c2b":  10090000,
         "diff":  -288000,
         "pct":  -2.78,
-        "fechaVpp":  "2026-06-02 15:14"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2023",
@@ -9410,7 +9410,7 @@ const DATA = [
         "c2b":  10190000,
         "diff":  -429000,
         "pct":  -4.04,
-        "fechaVpp":  "2026-06-02 13:59"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2024",
@@ -9425,7 +9425,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-02 13:56"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2017",
@@ -9440,7 +9440,7 @@ const DATA = [
         "c2b":  5990000,
         "diff":  489000,
         "pct":  8.89,
-        "fechaVpp":  "2026-06-02 13:47"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2024",
@@ -9455,7 +9455,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-02 13:45"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2024",
@@ -9470,7 +9470,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-02 13:37"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2024",
@@ -9485,7 +9485,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-02 13:24"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2018",
@@ -9500,7 +9500,7 @@ const DATA = [
         "c2b":  7290000,
         "diff":  -601000,
         "pct":  -7.62,
-        "fechaVpp":  "2026-06-02 13:22"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2024",
@@ -9515,7 +9515,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-02 13:06"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2016",
@@ -9530,7 +9530,7 @@ const DATA = [
         "c2b":  3790000,
         "diff":  -372000,
         "pct":  -8.94,
-        "fechaVpp":  "2026-06-02 13:05"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2021",
@@ -9545,7 +9545,7 @@ const DATA = [
         "c2b":  14290000,
         "diff":  -342000,
         "pct":  -2.34,
-        "fechaVpp":  "2026-06-02 12:55"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2021",
@@ -9560,7 +9560,7 @@ const DATA = [
         "c2b":  6590000,
         "diff":  6000,
         "pct":  0.09,
-        "fechaVpp":  "2026-06-02 12:48"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2018",
@@ -9575,7 +9575,7 @@ const DATA = [
         "c2b":  11290000,
         "diff":  176000,
         "pct":  1.58,
-        "fechaVpp":  "2026-06-02 12:28"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2019",
@@ -9590,7 +9590,7 @@ const DATA = [
         "c2b":  6890000,
         "diff":  -245000,
         "pct":  -3.43,
-        "fechaVpp":  "2026-06-02 12:02"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2023",
@@ -9605,7 +9605,7 @@ const DATA = [
         "c2b":  10890000,
         "diff":  920000,
         "pct":  9.23,
-        "fechaVpp":  "2026-06-02 12:00"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2019",
@@ -9620,7 +9620,7 @@ const DATA = [
         "c2b":  8590000,
         "diff":  -43000,
         "pct":  -0.5,
-        "fechaVpp":  "2026-06-02 11:38"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2023",
@@ -9635,7 +9635,7 @@ const DATA = [
         "c2b":  16190000,
         "diff":  -91000,
         "pct":  -0.56,
-        "fechaVpp":  "2026-06-02 11:33"
+        "fechaVpp":  "2026-06-02"
     },
     {
         "anio":  "2023",
@@ -9650,7 +9650,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-01 18:50"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2021",
@@ -9665,7 +9665,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-01 18:10"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2023",
@@ -9680,7 +9680,7 @@ const DATA = [
         "c2b":  13490000,
         "diff":  -2000,
         "pct":  -0.01,
-        "fechaVpp":  "2026-06-01 18:01"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2022",
@@ -9695,7 +9695,7 @@ const DATA = [
         "c2b":  16290000,
         "diff":  -30000,
         "pct":  -0.18,
-        "fechaVpp":  "2026-06-01 17:26"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2022",
@@ -9710,7 +9710,7 @@ const DATA = [
         "c2b":  8790000,
         "diff":  -87000,
         "pct":  -0.98,
-        "fechaVpp":  "2026-06-01 16:42"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2014",
@@ -9725,7 +9725,7 @@ const DATA = [
         "c2b":  9890000,
         "diff":  1016000,
         "pct":  11.45,
-        "fechaVpp":  "2026-06-01 16:03"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2020",
@@ -9740,7 +9740,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  -357000,
         "pct":  -5.07,
-        "fechaVpp":  "2026-06-01 15:27"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2018",
@@ -9755,7 +9755,7 @@ const DATA = [
         "c2b":  8290000,
         "diff":  -427000,
         "pct":  -4.9,
-        "fechaVpp":  "2026-06-01 14:15"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2015",
@@ -9770,7 +9770,7 @@ const DATA = [
         "c2b":  7790000,
         "diff":  -2005000,
         "pct":  -20.47,
-        "fechaVpp":  "2026-06-01 14:15"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2018",
@@ -9785,7 +9785,7 @@ const DATA = [
         "c2b":  8990000,
         "diff":  382000,
         "pct":  4.44,
-        "fechaVpp":  "2026-06-01 12:58"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2023",
@@ -9800,7 +9800,7 @@ const DATA = [
         "c2b":  16890000,
         "diff":  -980000,
         "pct":  -5.48,
-        "fechaVpp":  "2026-06-01 12:57"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2023",
@@ -9815,7 +9815,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-01 12:26"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2021",
@@ -9830,7 +9830,7 @@ const DATA = [
         "c2b":  11490000,
         "diff":  -922000,
         "pct":  -7.43,
-        "fechaVpp":  "2026-06-01 11:58"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2024",
@@ -9845,7 +9845,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-01 11:21"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2023",
@@ -9860,7 +9860,7 @@ const DATA = [
         "c2b":  6690000,
         "diff":  -51000,
         "pct":  -0.76,
-        "fechaVpp":  "2026-06-01 11:20"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2024",
@@ -9875,7 +9875,7 @@ const DATA = [
         "c2b":  null,
         "diff":  null,
         "pct":  null,
-        "fechaVpp":  "2026-06-01 10:41"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2017",
@@ -9890,7 +9890,7 @@ const DATA = [
         "c2b":  5390000,
         "diff":  -533000,
         "pct":  -9,
-        "fechaVpp":  "2026-06-01 10:35"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2021",
@@ -9905,7 +9905,7 @@ const DATA = [
         "c2b":  14690000,
         "diff":  -4854000,
         "pct":  -24.84,
-        "fechaVpp":  "2026-06-01 10:19"
+        "fechaVpp":  "2026-06-01"
     },
     {
         "anio":  "2023",
@@ -9920,7 +9920,7 @@ const DATA = [
         "c2b":  16390000,
         "diff":  -791000,
         "pct":  -4.6,
-        "fechaVpp":  "2026-06-01 09:39"
+        "fechaVpp":  "2026-06-01"
     }
 ];
 
@@ -9944,11 +9944,19 @@ function statusOf(row) {
 
 function badge(row) {
   const s = statusOf(row);
-  if (s === 'na') return '<span class="badge na">Sin cruce</span>';
-  if (s === 'up_sig') return '<span class="badge up">▲ Subió &gt;5%</span>';
-  if (s === 'up_minor') return '<span class="badge up">▲ Subió</span>';
-  if (s === 'down') return '<span class="badge down">▼ Bajó</span>';
-  return '<span class="badge flat">= Igual</span>';
+  if (s === 'na') return '<span class="badge na">N/D</span>';
+  if (s === 'up_sig') return '<span class="badge up">▲&gt;5%</span>';
+  if (s === 'up_minor') return '<span class="badge up">▲</span>';
+  if (s === 'down') return '<span class="badge down">▼</span>';
+  return '<span class="badge flat">=</span>';
+}
+
+function fmtKm(km) {
+  if (!km) return '—';
+  const nums = km.match(/[\d,]+/g);
+  if (!nums || nums.length < 2) return km;
+  const toK = s => Math.round(parseInt(s.replace(/,/g,''),10)/1000) + 'k';
+  return toK(nums[0]) + '-' + toK(nums[1]);
 }
 
 function populateMarcas() {
@@ -10018,7 +10026,7 @@ function render() {
       <td>${r.version}</td>
       <td>${r.patente}</td>
       <td>${r.fechaVpp || '—'}</td>
-      <td>${r.km}</td>
+      <td title="${r.km||''}">${fmtKm(r.km)}</td>
       <td class="num hl">${fmt(r.precioAutomatico)}</td>
       <td class="num">${fmt(r.descuentos)}</td>
       <td class="num">${fmt(r.ofertaFinal)}</td>
