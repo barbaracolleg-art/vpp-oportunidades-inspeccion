@@ -135,7 +135,8 @@
     <select id="marcaFilter"><option value="">Todas las marcas</option></select>
     <div class="seg" id="seg">
       <button data-f="all">Todos</button>
-      <button data-f="up_sig" class="active">Subió Jun→Jul &gt;5%</button>
+      <button data-f="diff_sig" class="active">Dif. Jun→Jul &gt; $200.000</button>
+      <button data-f="up_sig">Subió Jun→Jul &gt;5%</button>
       <button data-f="up_minor">Subió Jun→Jul ≤5%</button>
       <button data-f="down">Bajó Jun→Jul</button>
       <button data-f="flat">Sin cambio</button>
@@ -13180,9 +13181,10 @@ const fmt = n => n === null || n === undefined ? '—' : n.toLocaleString('es-CL
 const fmtPct = n => n === null || n === undefined ? '—' : (n > 0 ? '+' : '') + n.toLocaleString('es-CL') + '%';
 
 const SIG_THRESHOLD = 5; // %
+const DIFF_THRESHOLD = 200000; // CLP
 
 let sortKey = null, sortDir = 1;
-let activeFilter = 'up_sig';
+let activeFilter = 'diff_sig';
 let searchTerm = '';
 let marcaTerm = '';
 
@@ -13226,6 +13228,7 @@ function renderKPIs(filtered) {
   const withC2B = DATA.filter(d => d.c2b !== null).length;
   const withC2BJunio = DATA.filter(d => d.c2bJunio !== null).length;
   const withBoth = DATA.filter(d => d.pctJunioJulio !== null).length;
+  const diffSig = DATA.filter(d => d.diffJunioJulio !== null && d.diffJunioJulio > DIFF_THRESHOLD).length;
   const upSig = DATA.filter(d => d.pctJunioJulio !== null && d.pctJunioJulio > SIG_THRESHOLD).length;
   const down = DATA.filter(d => d.diffJunioJulio !== null && d.diffJunioJulio < 0).length;
   const pcts = DATA.filter(d => d.pctJunioJulio !== null).map(d => d.pctJunioJulio);
@@ -13234,6 +13237,7 @@ function renderKPIs(filtered) {
   const kpis = [
     { label: 'Oportunidades con inspección', value: total },
     { label: 'Con cruce Junio y Julio', value: withBoth },
+    { label: 'Dif. Jun→Jul > $200.000', value: diffSig, cls: 'up' },
     { label: `Subió Jun→Jul >${SIG_THRESHOLD}%`, value: upSig, cls: 'up' },
     { label: 'Bajó Jun→Jul', value: down, cls: 'down' },
     { label: 'Variación promedio Jun→Jul', value: avgPct + '%' },
@@ -13245,7 +13249,11 @@ function renderKPIs(filtered) {
 
 function applyFilters() {
   let rows = DATA;
-  if (activeFilter !== 'all') rows = rows.filter(r => statusOf(r) === activeFilter);
+  if (activeFilter === 'diff_sig') {
+    rows = rows.filter(r => r.diffJunioJulio !== null && r.diffJunioJulio > DIFF_THRESHOLD);
+  } else if (activeFilter !== 'all') {
+    rows = rows.filter(r => statusOf(r) === activeFilter);
+  }
   if (marcaTerm) rows = rows.filter(r => r.marca === marcaTerm);
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
