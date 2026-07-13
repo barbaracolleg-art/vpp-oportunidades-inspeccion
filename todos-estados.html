@@ -28089,10 +28089,18 @@ function renderKPIs(filtered) {
   const automatico = DATA.filter(d => d.tipoPrecio === 'Automatico').length;
   const manual = DATA.filter(d => d.tipoPrecio === 'Manual').length;
 
+  const sumAuto = DATA.filter(d => d.tipoPrecio === 'Automatico').reduce((a,d) => a + (d.precioBase||0), 0);
+  const sumManual = DATA.filter(d => d.tipoPrecio === 'Manual').reduce((a,d) => a + (d.precioBase||0), 0);
+  const sumTotal = sumAuto + sumManual;
+  const fmtMM = n => '$' + (n/1e6).toLocaleString('es-CL', {maximumFractionDigits: 1}) + ' MM';
+
   const kpis = [
     { label: 'Oportunidades con inspección', value: total },
     { label: 'Base = Automático', value: automatico },
     { label: 'Base = Manual', value: manual },
+    { label: 'Suma Precio Automático', value: fmtMM(sumAuto) },
+    { label: 'Suma Precio Manual', value: fmtMM(sumManual) },
+    { label: 'Suma Total (Auto + Manual)', value: fmtMM(sumTotal) },
     { label: 'Con cruce Junio y Julio', value: withBoth },
     { label: 'Dif. Jun→Jul > $200.000', value: diffSig, cls: 'up' },
     { label: `Subió Jun→Jul >${SIG_THRESHOLD}%`, value: upSig, cls: 'up' },
