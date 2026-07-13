@@ -135,11 +135,11 @@
     <select id="marcaFilter"><option value="">Todas las marcas</option></select>
     <div class="seg" id="seg">
       <button data-f="all">Todos</button>
-      <button data-f="up_sig" class="active">Subió &gt;5%</button>
-      <button data-f="up_minor">Subió ≤5%</button>
-      <button data-f="down">Bajó</button>
+      <button data-f="up_sig" class="active">Subió Jun→Jul &gt;5%</button>
+      <button data-f="up_minor">Subió Jun→Jul ≤5%</button>
+      <button data-f="down">Bajó Jun→Jul</button>
       <button data-f="flat">Sin cambio</button>
-      <button data-f="na">Sin cruce C2B</button>
+      <button data-f="na">Sin cruce Junio o Julio</button>
     </div>
     <span class="count-note" id="countNote"></span>
   </div>
@@ -160,16 +160,16 @@
           <th data-k="ofertaFinal" class="num">Oferta Final</th>
           <th data-k="c2bJunio" class="num hl">C2B Junio</th>
           <th data-k="c2b" class="num hl">C2B Julio</th>
-          <th data-k="diff" class="num">Dif. vs Auto.</th>
-          <th data-k="pct" class="num">% Var. vs Auto.</th>
+          <th data-k="diffJunioJulio" class="num">Dif. Jun→Jul</th>
           <th data-k="pctJunioJulio" class="num">% Var. Jun→Jul</th>
+          <th data-k="pct" class="num">% Var. vs Auto. (Jul)</th>
         </tr>
       </thead>
       <tbody id="tbody"></tbody>
     </table>
   </div>
 
-  <footer>Generado automáticamente. "Sin cruce C2B" significa que no existe un precio automático (Automático = Sí) para esa combinación exacta de Año/Marca/Modelo/Versión en la base de Julio.</footer>
+  <footer>Generado automáticamente. La comparación principal (▲/▼ y filtros) es <strong>C2B Junio → C2B Julio</strong>. "Sin cruce" significa que no existe un precio automático (Automático = Sí) para esa combinación exacta de Año/Marca/Modelo/Versión en Junio y/o Julio. La columna "% Var. vs Auto. (Jul)" es referencial: compara el Precio Automático original contra el C2B de Julio.</footer>
 </div>
 
 <script>
@@ -13187,10 +13187,10 @@ let searchTerm = '';
 let marcaTerm = '';
 
 function statusOf(row) {
-  if (row.pct === null || row.pct === undefined) return 'na';
-  if (row.pct > SIG_THRESHOLD) return 'up_sig';
-  if (row.pct > 0) return 'up_minor';
-  if (row.pct < 0) return 'down';
+  if (row.pctJunioJulio === null || row.pctJunioJulio === undefined) return 'na';
+  if (row.pctJunioJulio > SIG_THRESHOLD) return 'up_sig';
+  if (row.pctJunioJulio > 0) return 'up_minor';
+  if (row.pctJunioJulio < 0) return 'down';
   return 'flat';
 }
 
@@ -13224,20 +13224,19 @@ function populateMarcas() {
 function renderKPIs(filtered) {
   const total = DATA.length;
   const withC2B = DATA.filter(d => d.c2b !== null).length;
-  const upSig = DATA.filter(d => d.pct !== null && d.pct > SIG_THRESHOLD).length;
-  const down = DATA.filter(d => d.diff < 0).length;
-  const pcts = DATA.filter(d => d.pct !== null).map(d => d.pct);
-  const avgPct = pcts.length ? (pcts.reduce((a,b)=>a+b,0) / pcts.length).toFixed(1) : '—';
-
   const withC2BJunio = DATA.filter(d => d.c2bJunio !== null).length;
+  const withBoth = DATA.filter(d => d.pctJunioJulio !== null).length;
+  const upSig = DATA.filter(d => d.pctJunioJulio !== null && d.pctJunioJulio > SIG_THRESHOLD).length;
+  const down = DATA.filter(d => d.diffJunioJulio !== null && d.diffJunioJulio < 0).length;
+  const pcts = DATA.filter(d => d.pctJunioJulio !== null).map(d => d.pctJunioJulio);
+  const avgPct = pcts.length ? (pcts.reduce((a,b)=>a+b,0) / pcts.length).toFixed(1) : '—';
 
   const kpis = [
     { label: 'Oportunidades con inspección', value: total },
-    { label: 'Con cruce C2B Julio', value: withC2B },
-    { label: 'Con cruce C2B Junio', value: withC2BJunio },
-    { label: `Subió precio >${SIG_THRESHOLD}%`, value: upSig, cls: 'up' },
-    { label: 'Bajó de precio', value: down, cls: 'down' },
-    { label: 'Variación promedio', value: avgPct + '%' },
+    { label: 'Con cruce Junio y Julio', value: withBoth },
+    { label: `Subió Jun→Jul >${SIG_THRESHOLD}%`, value: upSig, cls: 'up' },
+    { label: 'Bajó Jun→Jul', value: down, cls: 'down' },
+    { label: 'Variación promedio Jun→Jul', value: avgPct + '%' },
   ];
   document.getElementById('kpis').innerHTML = kpis.map(k =>
     `<div class="kpi"><div class="label">${k.label}</div><div class="value ${k.cls||''}">${k.value}</div></div>`
@@ -13287,9 +13286,9 @@ function render() {
       <td class="num">${fmt(r.ofertaFinal)}</td>
       <td class="num hl">${fmt(r.c2bJunio)}</td>
       <td class="num hl">${fmt(r.c2b)}</td>
-      <td class="num">${badge(r)} ${r.diff !== null ? fmt(r.diff) : ''}</td>
-      <td class="num">${fmtPct(r.pct)}</td>
+      <td class="num">${badge(r)} ${r.diffJunioJulio !== null ? fmt(r.diffJunioJulio) : ''}</td>
       <td class="num">${fmtPct(r.pctJunioJulio)}</td>
+      <td class="num">${fmtPct(r.pct)}</td>
     </tr>
   `).join('');
   renderKPIs(rows);
